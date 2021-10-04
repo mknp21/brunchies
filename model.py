@@ -34,6 +34,15 @@ class Restaurants(db.Model):
     def __repr__(self):
         return f"Restaurant name={self.rest_name} category={self.category}"
 
+class SaveList(db.Model):
+    """List of saved restaurants."""
+
+    __tablename__ = "saves"
+
+    save_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey(users.user_id))
+    rest_id = db.Column(db.Integer, db.ForeignKey(restaurants.rest_id))
+
 def connect_to_db(flask_app, db_uri="postgresql:///brunch", echo=True):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     flask_app.config["SQLALCHEMY_ECHO"] = echo
