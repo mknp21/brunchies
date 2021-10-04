@@ -18,6 +18,23 @@ class User(db.Model):
     def __repr__(self):
         return f"User name={self.name} email={self.email}"
 
+class Restaurants(db.Model):
+    """A restaurant."""
+
+    __tablename__ = 'restaurants'
+
+    rest_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    category = db.Column(db.String(25))
+    rest_name = db.Column(db.String(50))
+    rest_zip = db.Column(db.String(10))
+    coord = db.Column(db.Float)
+    attributes = db.Column(db.String(100))
+    rating = db.Column(db.Float)
+
+    def __repr__(self):
+        return f"Restaurant name={self.rest_name} category={self.category}"
+    
+
 if __name__ == "__main__":
     from server import app
 
