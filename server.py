@@ -5,16 +5,17 @@ from model import connect_to_db
 # import crud
 from jinja2 import StrictUndefined
 
-from pprint import pformat
+# from pprint import pformat
 import os
 import requests
+import json
 
 app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
 API_KEY = os.environ['YELP_KEY']
-
+headers = {'Authorization': 'Bearer %s' % API_KEY}
 
 @app.route('/')
 def show_homepage():
@@ -41,7 +42,14 @@ def show_brunch_form():
 def find_brunch_spots():
     """Search for brunch spots on Yelp."""
 
-    pass
+    url = 'https://api.yelp.com/v3/businesses/search'
+    params = {'location':'San Francisco', 'categories':'breakfast_brunch'}
+
+    res = requests.get(url, params=params, headers=headers)
+    print(f'The status code is {res.status_code}')
+
+    return json.loads(res.text)
+
 
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
