@@ -13,14 +13,14 @@ class User(db.Model):
     name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(25), nullable=False, unique=True)
     pw = db.Column(db.String(20), nullable=False)
-    zipcode = db.Column(db.String(10))
+    zipcode = db.Column(db.String(10), nullable=False)
 
     # saves = a list of SaveList objects
 
     def __repr__(self):
-        return f"User name={self.name} email={self.email}"
+        return f"<User name={self.name} email={self.email}>"
 
-class Restaurants(db.Model):
+class Restaurant(db.Model):
     """A restaurant."""
 
     __tablename__ = 'restaurants'
@@ -36,7 +36,7 @@ class Restaurants(db.Model):
     # saves = a list of SaveList objects
 
     def __repr__(self):
-        return f"Restaurant name={self.rest_name} category={self.category}"
+        return f"<Restaurant name={self.rest_name} category={self.category}>"
 
 class SaveList(db.Model):
     """List of saved restaurants."""
@@ -51,6 +51,9 @@ class SaveList(db.Model):
     # save.user returns related User object
     restaurant = db.relationship("Restaurant", backref="saves")
     # save.restaurant returns related Restaurant object
+
+    def __repr__(self):
+        return f"<Save Item save_id={self.save_id} user_id={self.user_id} rest_id={self.rest_id}>"
 
 # relationships between classes:
 # a user has many saves
@@ -70,8 +73,7 @@ def connect_to_db(flask_app, db_uri="postgresql:///brunch", echo=True):
 if __name__ == "__main__":
     from server import app
 
-    # Call connect_to_db(app, echo=False) if your program output gets
-    # too annoying; this will tell SQLAlchemy not to print out every
-    # query it executes.
+    # Call connect_to_db(app, echo=False) to tell SQLAlchemy 
+    # not to print out every query it executes.
 
     connect_to_db(app)
