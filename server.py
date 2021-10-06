@@ -3,6 +3,7 @@
 from flask import (Flask, render_template, request, flash, session, redirect)
 from model import connect_to_db
 import crud
+# throws error for undefined variables
 from jinja2 import StrictUndefined
 
 # from pprint import pformat
@@ -42,16 +43,16 @@ def show_brunch_form():
 def find_brunch_spots():
     """Search for brunch spots on Yelp."""
 
-    url = 'https://api.yelp.com/v3/businesses/search'
-    params = {'location':'San Francisco', 'categories':'breakfast_brunch'}
+    # url = 'https://api.yelp.com/v3/businesses/search'
+    # params = {'location':'San Francisco', 'categories':'breakfast_brunch'}
 
-    res = requests.get(url, params=params, headers=headers)
-    print(f'The status code is {res.status_code}')
+    # res = requests.get(url, params=params, headers=headers)
+    # print(f'The status code is {res.status_code}')
 
-    return json.loads(res.text)
+    # return json.loads(res.text)
 
 
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
-    # connect_to_db(app)
+    connect_to_db(app)
     app.run(host="0.0.0.0", debug=True)
