@@ -26,17 +26,18 @@ class Restaurant(db.Model):
     __tablename__ = 'restaurants'
 
     rest_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    category = db.Column(db.String(25), nullable=False)
-    rest_name = db.Column(db.String(50), nullable=False)
-    rest_zip = db.Column(db.String(10), nullable=False)
-    coord = db.Column(db.Float, nullable=True)
-    attributes = db.Column(db.String(100), nullable=True)
-    rating = db.Column(db.Float, nullable=True)
+    yelp_id = db.Column(db.Integer, nullable=False)
+    # category = db.Column(db.String(25), nullable=False)
+    # rest_name = db.Column(db.String(50), nullable=False)
+    # rest_zip = db.Column(db.String(10), nullable=False)
+    # coord = db.Column(db.Float, nullable=True)
+    # attributes = db.Column(db.String(100), nullable=True)
+    # rating = db.Column(db.Float, nullable=True)
 
     # saves = a list of SaveList objects
 
     def __repr__(self):
-        return f"<Restaurant name={self.rest_name} category={self.category}>"
+        return f"<Restaurant id={self.rest_id} Yelp id={self.yelp_id}>"
 
 class SaveList(db.Model):
     """List of saved restaurants."""
