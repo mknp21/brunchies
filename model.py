@@ -26,7 +26,7 @@ class Restaurant(db.Model):
     __tablename__ = 'restaurants'
 
     rest_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    yelp_id = db.Column(db.Integer, nullable=False)
+    yelp_id = db.Column(db.String(50), nullable=False)
     # category = db.Column(db.String(25), nullable=False)
     # rest_name = db.Column(db.String(50), nullable=False)
     # rest_zip = db.Column(db.String(10), nullable=False)
