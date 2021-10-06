@@ -2,6 +2,7 @@
 
 from model import db, User, Restaurant, SaveList, connect_to_db
 
+
 def create_user(name, email, pw, zipcode):
     """Create and return a new user."""
 
@@ -26,6 +27,7 @@ def create_saved_item(user, restaurant):
     saved_item = SaveList(user=user, restaurant=restaurant)
     db.session.add(saved_item)
     db.session.commit()
+
 
 if __name__ == '__main__':
     from server import app
