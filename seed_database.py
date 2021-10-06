@@ -17,7 +17,7 @@ os.system('createdb brunch')
 model.connect_to_db(server.app)
 model.db.create_all()
 
-# Create a user
+# Create test users
 for n in range(5):
     name = 'First Last'
     email = f'testuser{n}@test.com'
@@ -26,15 +26,17 @@ for n in range(5):
 
     user = crud.create_user(name, email, pw, zipcode)
 
-# Create a restaurant
+# Retrieve business info from Yelp API and add business id to db
 url = 'https://api.yelp.com/v3/businesses/search'
-params = {'location':'Bay Area', 'categories':'breakfast_brunch'}
+params = {'location':'San Francisco', 'categories':'breakfast_brunch'}
 
 res = requests.get(url, params=params, headers=headers)
-# print(f'The status code is {res.status_code}')
+data = json.loads(res.text)     #  data is a dictionary
+businesses = data['businesses']
 
-# return json.loads(res.text)
-print(json.loads(res.text))
-# res.business[id]
+for business in businesses:
+    yelp_id = business['id']
+
+    restaurant = crud.create_restaurant(yelp_id)
 
 # Create a save item
