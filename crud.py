@@ -25,6 +25,13 @@ def create_restaurant(name, category, zipcode, coordinates=None, attributes=None
 
     return restaurant
 
+def create_saved_item(user, restaurant):
+    """Create and return a new saved item."""
+
+    saved_item = SaveList(user=user, restaurant=restaurant)
+    db.session.add(saved_item)
+    db.session.commit()
+
 if __name__ == '__main__':
     from server import app
     connect_to_db(app)
