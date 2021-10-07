@@ -4,6 +4,8 @@ import os
 import json
 import requests
 
+from random import choice
+
 import crud
 import model
 import server
@@ -25,11 +27,13 @@ res = requests.get(url, params=params, headers=headers)
 data = json.loads(res.text)     #  data is a dictionary
 businesses = data['businesses']
 
+restaurants = []
+
 for business in businesses:
     yelp_id = business['id']
 
     restaurant = crud.create_restaurant(yelp_id)
-    restaurant_ids.append(restaurant)
+    restaurants.append(restaurant)
 
 # Create test users
 for n in range(5):
@@ -39,7 +43,9 @@ for n in range(5):
     zipcode = f'5555{n}'
 
     user = crud.create_user(name, email, pw, zipcode)
+    random_restaurant = choice(restaurants)
 
     # create a save item
-    # user_saved_item = crud.create_saved_item()
+    user_saved_item = crud.create_saved_item(user, random_restaurant)
+
 
