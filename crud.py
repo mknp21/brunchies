@@ -1,5 +1,6 @@
 """CRUD operations."""
 
+
 from model import db, User, Restaurant, SaveList, connect_to_db
 
 
