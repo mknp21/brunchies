@@ -8,6 +8,8 @@ import crud
 import model
 import server
 
+os.system('source secrets.sh')
+
 API_KEY = os.environ['YELP_KEY']
 headers = {'Authorization': 'Bearer %s' % API_KEY}
 

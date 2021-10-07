@@ -42,11 +42,12 @@ def verify_login():
     email = request.form.get("email")
     password = request.form.get("password")
 
-    user = crud.get_user_by_email(email)
+    user_email = crud.get_user_by_email(email)
 
     # need to store user in the session at some point
 
     # if a user's email exists in the db
+    # if 
         # check user's pw
         # if pw not correct
             # alert user that pw is incorrect and to try again
