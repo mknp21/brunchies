@@ -29,6 +29,16 @@ def create_saved_item(user, restaurant):
     db.session.add(saved_item)
     db.session.commit()
 
+def get_users():
+    """Return all users."""
+
+    return User.query.all()
+
+def get_user_by_id():
+    """Return a user using their user id."""
+
+    return User.query.get(user_id)
+
 def get_user_by_email(email):
     """Return user email"""
 
