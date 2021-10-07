@@ -25,8 +25,6 @@ res = requests.get(url, params=params, headers=headers)
 data = json.loads(res.text)     #  data is a dictionary
 businesses = data['businesses']
 
-restaurant_ids = []
-
 for business in businesses:
     yelp_id = business['id']
 

@@ -22,10 +22,10 @@ def create_restaurant(yelp_id):
 
     return restaurant
 
-def create_saved_item(user, restaurant):
+def create_saved_item(user_id, rest_id):
     """Create and return a new saved item."""
 
-    saved_item = SaveList(user=user, restaurant=restaurant)
+    saved_item = SaveList(user_id=user_id, rest_id=rest_id)
     db.session.add(saved_item)
     db.session.commit()
 
@@ -37,7 +37,7 @@ def get_users():
 def get_user_by_id():
     """Return a user using their user id."""
 
-    return User.query.get(user_id)
+    return User.query.get(user_id).one()
 
 def get_user_by_email(email):
     """Return user email"""
