@@ -29,6 +29,11 @@ def create_saved_item(user, restaurant):
     db.session.add(saved_item)
     db.session.commit()
 
+def get_user_by_email(email):
+    """Return user email"""
+
+    return User.query.filter(User.email == email).one()
+
 
 if __name__ == '__main__':
     from server import app
