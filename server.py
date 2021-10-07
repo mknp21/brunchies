@@ -31,6 +31,17 @@ def show_login_page():
 
     return render_template("login_page.html")
 
+@app.route('/login', methods=['POST'])
+def verify_login():
+    """Verify login information.
+    
+    Get user's login credentials in the request.form, locate 
+    user in the database, and store them in the session.
+    """
+
+    email = request.form.get("email")
+    password = request.form.get("password")
+
 
 @app.route('/brunchspots')
 def show_brunch_form():
