@@ -31,6 +31,7 @@ def show_login_page():
 
     return render_template("login_page.html")
 
+
 @app.route('/login', methods=['POST'])
 def verify_login():
     """Verify login information.
@@ -41,15 +42,12 @@ def verify_login():
 
     email = request.form.get("email")
     password = request.form.get("password")
-    # print('*' * 20, email, password)
 
     users = crud.get_users()
 
     user_emails = []
     for user in users:
         user_emails.append(user.email)
-    # print('*' * 20, user_emails)
-
 
     # if a user's email exists in the db
     if email in user_emails:
@@ -59,20 +57,27 @@ def verify_login():
         if password != user.pw:
             # alert user that pw is incorrect and to try again
             flash("The password you entered is incorrect. Please try again.")
+            return redirect("/login")
         # if pw is correct
         else:
             # store user in session and provide a success message
-            session['current_user'] = user.name
+            session["current_user"] = user.name
             flash("Login successful!")
+            return redirect("/myprofile")
     # if a user's email does not exist in the db
     else:
         # let them know they don't have an account
         flash("""Your email is incorrect or does not belong to 
                 an existing account. Please try again or create 
                 a new account.""")
-        redirect("/login")
+        return redirect("/")
 
-    return redirect("/")
+
+@app.route('/myprofile')
+def show_user_profile():
+    """Display the user's profile."""
+
+    return render_template("user_profile.html")
 
 
 @app.route('/brunchspots')
