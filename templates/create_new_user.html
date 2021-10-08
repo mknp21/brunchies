@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}It's Brunch Time!{% endblock %}
+{% block head %}{% endblock %}
+{% block body %}
+    <h1>Create An Account:</h1>
+    <form>
+        <p>Enter first & last name:</p>
+            <input type="text"
+                   name="name"
+                   placeholder="First & Last Name"
+                   required></br>
+        <p>Enter email:</p>
+            <input type="email" 
+                   name="email" 
+                   placeholder="Email Address" 
+                   required><br>
+        <p>Enter password:</p>
+            <input type="password"
+                   name="password"
+                   placeholder="Password"
+                   required></br>
+        <p>Enter zipcode:</p>
+            <input type="text"
+                   name="zipcode"
+                   placeholder="Zipcode"></br>
+        <input type="submit">
+    </form>
+{% endblock %}
+{% block after_body %}{% endblock %}
