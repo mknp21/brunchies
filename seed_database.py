@@ -21,10 +21,11 @@ model.db.create_all()
 
 # Retrieve business info from Yelp API and add business id to db
 url = 'https://api.yelp.com/v3/businesses/search'
-params = {'location':'San Francisco', 'categories':'breakfast_brunch'}
+params = {'location':'San Francisco', 'categories':'breakfast_brunch', 'limit':50}
 
 res = requests.get(url, params=params, headers=headers)
 data = json.loads(res.text)     #  data is a dictionary
+print(data)
 businesses = data['businesses']
 
 restaurants = []
