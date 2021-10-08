@@ -25,6 +25,27 @@ def show_homepage():
     return render_template("homepage.html")
 
 
+@app.route('/createaccount')
+def show_account_creation_page():
+    """Show account creation page for new users."""
+
+    return render_template("create_new_user.html")
+
+
+@app.route('/createaccount', methods=["POST"])
+def create_new_account():
+    """Create account for a new user and add to users db."""
+
+    name = request.form.get("name")
+    email = request.form.get("email")
+    password = request.form.get("password")
+    zipcode = request.form.get("zipcode")
+
+    crud.create_user(name, email, password, zipcode)
+
+    return redirect("/myprofile")
+
+
 @app.route('/login')
 def show_login_page():
     """Show login page."""
