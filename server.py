@@ -41,20 +41,38 @@ def verify_login():
 
     email = request.form.get("email")
     password = request.form.get("password")
+    # print('*' * 20, email, password)
 
-    user_email = crud.get_user_by_email(email)
+    users = crud.get_users()
 
-    # need to store user in the session at some point
+    user_emails = []
+    for user in users:
+        user_emails.append(user.email)
+    # print('*' * 20, user_emails)
+
 
     # if a user's email exists in the db
-    # if 
+    if email in user_emails:
+        user = crud.get_user_by_email(email)
         # check user's pw
         # if pw not correct
+        if password != user.pw:
             # alert user that pw is incorrect and to try again
+            flash("The password you entered is incorrect. Please try again.")
         # if pw is correct
-            # return to home page
+        else:
+            # store user in session and provide a success message
+            session['current_user'] = user.name
+            flash("Login successful!")
     # if a user's email does not exist in the db
+    else:
         # let them know they don't have an account
+        flash("""Your email is incorrect or does not belong to 
+                an existing account. Please try again or create 
+                a new account.""")
+        redirect("/login")
+
+    return redirect("/")
 
 
 @app.route('/brunchspots')

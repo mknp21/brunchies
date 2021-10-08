@@ -34,10 +34,10 @@ def get_users():
 
     return User.query.all()
 
-def get_user_by_id():
-    """Return a user using their user id."""
+# def get_user_by_id():
+#     """Return a user using their user id."""
 
-    return User.query.get(user_id).one()
+#     return User.query.get(user_id).one()
 
 def get_user_by_email(email):
     """Return user email"""
