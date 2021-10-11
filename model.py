@@ -37,7 +37,7 @@ class Restaurant(db.Model):
     # saves = a list of SaveList objects
 
     def __repr__(self):
-        return f"<Restaurant id={self.rest_id} Yelp id={self.yelp_id}>"
+        return f"<Restaurant name={self.rest_name} id={self.rest_id} Yelp id={self.yelp_id}>"
 
 class SaveList(db.Model):
     """List of saved restaurants."""
