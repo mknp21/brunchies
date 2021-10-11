@@ -101,12 +101,16 @@ def show_user_profile():
 
 
 @app.route('/allbrunchspots')
-def show_brunch_form():
+def show_all_restaurants():
     """Show full list of brunch spots."""
 
     restaurants = crud.get_restaurants()
+    all_restaurants = []
+
+    for restaurant in restaurants:
+        all_restaurants.append(restaurant.rest_name)
     
-    return render_template("brunch_list.html")
+    return render_template("brunch_list.html", restaurants=all_restaurants)
 
 
 # @app.route('/brunchspots/search')
