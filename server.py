@@ -103,6 +103,13 @@ def show_all_restaurants():
     return render_template("brunch_list.html", restaurants=all_restaurants)
 
 
+@app.route('/brunchspots/<rest_id>')
+def show_restaurant_id(rest_id):
+    """Show details of a restaurant."""
+
+    return render_template("restaurant_details.html")
+
+
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
     connect_to_db(app)
