@@ -13,10 +13,10 @@ def create_user(name, email, pw, zipcode):
 
     return user
 
-def create_restaurant(yelp_id):
+def create_restaurant(yelp_id, rest_name):
     """Create and return a new restaurant."""
 
-    restaurant = Restaurant(yelp_id=yelp_id)
+    restaurant = Restaurant(yelp_id=yelp_id, rest_name=rest_name)
     db.session.add(restaurant)
     db.session.commit()
 
