@@ -95,12 +95,8 @@ def show_all_restaurants():
     """Show list of all brunch restaurants."""
 
     restaurants = crud.get_restaurants()
-    all_restaurants = []
-
-    for restaurant in restaurants:
-        all_restaurants.append(restaurant.rest_name)
     
-    return render_template("brunch_list.html", restaurants=all_restaurants)
+    return render_template("all_restaurants.html", restaurants=restaurants)
 
 
 @app.route('/brunchspots/<rest_id>')
