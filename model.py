@@ -28,11 +28,14 @@ class Restaurant(db.Model):
     rest_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     yelp_id = db.Column(db.String(50), nullable=False)
     rest_name = db.Column(db.String(50), nullable=False)
-    # category = db.Column(db.String(25), nullable=False)
-    # rest_zip = db.Column(db.String(10), nullable=False)
-    # coord = db.Column(db.Float, nullable=True)
-    # attributes = db.Column(db.String(100), nullable=True)
-    # rating = db.Column(db.Float, nullable=True)
+    rating = db.Column(db.Float, nullable=True)
+    review_count = db.Column(db.Integer, nullable=True)
+    price = db.Column(db.String(10), nullable=True)
+    phone = db.Column(db.String(25), nullable=False)
+    location = db.Column(db.String(50), nullable=False)
+    img_url = db.Column(db.String(50), nullable=False)
+    url = db.Column(db.String(50), nullable=False)
+
 
     # saves = a list of SaveList objects
 
