@@ -100,16 +100,16 @@ def show_user_profile():
     return render_template("user_profile.html")
 
 
-@app.route('/brunchspots')
+@app.route('/allbrunchspots')
 def show_brunch_form():
-    """Show brunch search form."""
+    """Show full list of brunch spots."""
     
     pass
 
 
-@app.route('/brunchspots/search')
-def find_brunch_spots():
-    """Search for brunch spots on Yelp."""
+# @app.route('/brunchspots/search')
+# def find_brunch_spots():
+#     """Search for brunch spots on Yelp."""
 
     # url = 'https://api.yelp.com/v3/businesses/search'
     # params = {'location':'San Francisco', 'categories':'breakfast_brunch'}
