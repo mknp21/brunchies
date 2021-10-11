@@ -2,7 +2,11 @@
 {% block title %}It's Brunch Time!{% endblock %}
 {% block head %}{% endblock %}
 {% block body %}
-    <h1>All Brunch Locations:</h1>
-    <!-- <ol id="saved-restaurants"></ol> -->
+    <h1>All Brunch Locations</h1>
+    {% for restaurant in restaurants %}
+    <ul id="all-restaurants">
+        <li>{{ restaurant }}</li>
+    </ul>
+    {% endfor %}
 {% endblock %}
 {% block after_body %}{% endblock %}
