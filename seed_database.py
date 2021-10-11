@@ -32,8 +32,9 @@ restaurants = []
 
 for business in businesses:
     yelp_id = business['id']
+    rest_name = business['name']
 
-    restaurant = crud.create_restaurant(yelp_id)
+    restaurant = crud.create_restaurant(yelp_id, rest_name)
     restaurants.append(restaurant)
 
 # Create test users
