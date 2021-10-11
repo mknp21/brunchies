@@ -90,9 +90,9 @@ def show_user_profile():
     return render_template("user_profile.html")
 
 
-@app.route('/allbrunchspots')
+@app.route('/brunchspots')
 def show_all_restaurants():
-    """Show full list of brunch spots."""
+    """Show list of all brunch restaurants."""
 
     restaurants = crud.get_restaurants()
     all_restaurants = []
