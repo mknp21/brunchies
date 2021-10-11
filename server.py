@@ -5,7 +5,6 @@ from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined     # throws error for undefined variables
 
-# from pprint import pformat
 import os
 import requests
 import json
@@ -64,29 +63,20 @@ def verify_login():
     password = request.form.get("password")
 
     users = crud.get_users()
-
     user_emails = []
     for user in users:
         user_emails.append(user.email)
 
-    # if a user's email exists in the db
     if email in user_emails:
         user = crud.get_user_by_email(email)
-        # check user's pw
-        # if pw not correct
         if password != user.pw:
-            # alert user that pw is incorrect and to try again
             flash("The password you entered is incorrect. Please try again.")
             return redirect("/login")
-        # if pw is correct
         else:
-            # store user in session and provide a success message
             session["current_user"] = user.name
             flash("Login successful!")
             return redirect("/myprofile")
-    # if a user's email does not exist in the db
     else:
-        # let them know they don't have an account
         flash("""Your email is incorrect or does not belong to 
                 an existing account. Please try again or create 
                 a new account.""")
@@ -111,19 +101,6 @@ def show_all_restaurants():
         all_restaurants.append(restaurant.rest_name)
     
     return render_template("brunch_list.html", restaurants=all_restaurants)
-
-
-# @app.route('/brunchspots/search')
-# def find_brunch_spots():
-#     """Search for brunch spots on Yelp."""
-
-    # url = 'https://api.yelp.com/v3/businesses/search'
-    # params = {'location':'San Francisco', 'categories':'breakfast_brunch'}
-
-    # res = requests.get(url, params=params, headers=headers)
-    # print(f'The status code is {res.status_code}')
-
-    # return json.loads(res.text)
 
 
 if __name__ == "__main__":
