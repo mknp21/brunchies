@@ -44,6 +44,11 @@ def get_user_by_email(email):
 
     return User.query.filter(User.email == email).one()
 
+def get_restaurants():
+    """Return all restaurants."""
+
+    return Restaurant.query.all()
+
 
 if __name__ == '__main__':
     from server import app

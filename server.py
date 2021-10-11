@@ -103,8 +103,10 @@ def show_user_profile():
 @app.route('/allbrunchspots')
 def show_brunch_form():
     """Show full list of brunch spots."""
+
     
-    pass
+    
+    return render_template("brunch_list.html")
 
 
 # @app.route('/brunchspots/search')
