@@ -32,9 +32,12 @@ class Restaurant(db.Model):
     review_count = db.Column(db.Integer, nullable=True)
     price = db.Column(db.String(10), nullable=True)
     phone = db.Column(db.String(25), nullable=False)
-    location = db.Column(db.String(50), nullable=False)
-    img_url = db.Column(db.String(50), nullable=False)
-    url = db.Column(db.String(50), nullable=False)
+    address = db.Column(db.String(50), nullable=False)
+    city = db.Column(db.String(25), nullable=False)
+    zipcode = db.Column(db.String(15), nullable=False)
+    state = db.Column(db.String(5), nullable=False)
+    img_url = db.Column(db.String(250), nullable=False)
+    url = db.Column(db.String(250), nullable=False)
 
 
     # saves = a list of SaveList objects

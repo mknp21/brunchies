@@ -13,7 +13,18 @@ def create_user(name, email, pw, zipcode):
 
     return user
 
-def create_restaurant(yelp_id, rest_name, rating, review_count, price, phone, location, img_url, url):
+def create_restaurant(yelp_id, 
+                      rest_name, 
+                      rating, 
+                      review_count, 
+                      price, 
+                      phone, 
+                      address,
+                      city,
+                      zipcode,
+                      state, 
+                      img_url, 
+                      url):
     """Create and return a new restaurant."""
 
     restaurant = Restaurant(yelp_id=yelp_id, 
@@ -22,7 +33,10 @@ def create_restaurant(yelp_id, rest_name, rating, review_count, price, phone, lo
                             review_count=review_count,
                             price=price,
                             phone=phone,
-                            location=location,
+                            address=address,
+                            city=city,
+                            zipcode=zipcode,
+                            state=state,
                             img_url=img_url,
                             url=url)
     db.session.add(restaurant)

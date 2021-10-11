@@ -33,8 +33,29 @@ restaurants = []
 for business in businesses:
     yelp_id = business['id']
     rest_name = business['name']
+    rating = business['rating']
+    review_count = business['review_count']
+    price = business['price']
+    phone = business['phone']
+    address = business['location']['address1']
+    city = business['location']['city']
+    zipcode = business['location']['zip_code']
+    state = business['location']['state']
+    img_url = business['image_url']
+    url = business['url']
 
-    restaurant = crud.create_restaurant(yelp_id, rest_name)
+    restaurant = crud.create_restaurant(yelp_id, 
+                                        rest_name, 
+                                        rating, 
+                                        review_count, 
+                                        price, 
+                                        phone, 
+                                        address,
+                                        city,
+                                        zipcode,
+                                        state, 
+                                        img_url, 
+                                        url)
     restaurants.append(restaurant)
 
 # Create test users
