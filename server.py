@@ -104,7 +104,7 @@ def show_user_profile():
 def show_brunch_form():
     """Show full list of brunch spots."""
 
-    
+    restaurants = crud.get_restaurants()
     
     return render_template("brunch_list.html")
 
