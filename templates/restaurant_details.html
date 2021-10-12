@@ -2,7 +2,24 @@
 {% block title %}{{ restaurant.rest_name }}{% endblock %}
 {% block head %}{% endblock %}
 {% block body %}
-    <h1>{{ restaurant.rest_name }}</h1>
+
+    <h1><a href="{{ restaurant.url }}">{{ restaurant.rest_name }}</a></h1>
+
     <img src="{{ restaurant.img_url }}">
+
+    <p>
+        Price: {{ restaurant.price }}
+        Rating: {{ restaurant.rating }} 
+        Review Count: {{ restaurant.review_count }}
+    </p>
+    </br>
+    <p>
+        {{ restaurant.phone }}</br>
+        {{ restaurant.address }}</br>
+        {{ restaurant.city }} {{ restaurant.state }} {{ restaurant.zipcode }}</br>
+    </p>
+    </br>
+
+    <button type="button">Save Restaurant</button>
+
 {% endblock %}
-{% block after_body %}{% endblock %}
