@@ -3,8 +3,6 @@
 {% block head %}{% endblock %}
 {% block body %}
     <h1>{{ restaurant.rest_name }}</h1>
-    <section>
-        {{ restaurant.img_url }}
-    </section>
+    <img src="{{ restaurant.img_url }}">
 {% endblock %}
 {% block after_body %}{% endblock %}
