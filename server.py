@@ -112,3 +112,4 @@ if __name__ == "__main__":
     # DebugToolbarExtension(app)
     connect_to_db(app)
     app.run(debug=True)
+    
