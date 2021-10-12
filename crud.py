@@ -56,11 +56,6 @@ def get_users():
 
     return User.query.all()
 
-# def get_user_by_id():
-#     """Return a user using their user id."""
-
-#     return User.query.get(user_id).one()
-
 def get_user_by_email(email):
     """Return user email"""
 
@@ -70,6 +65,11 @@ def get_restaurants():
     """Return all restaurants."""
 
     return Restaurant.query.all()
+
+def get_restaurant_by_id(rest_id):
+    """Return a restaurant using the restaurant id."""
+
+    return Restaurant.query.get(rest_id)
 
 
 if __name__ == '__main__':
