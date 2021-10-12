@@ -108,6 +108,13 @@ def show_restaurant_id(rest_id):
     return render_template("restaurant_details.html", restaurant=restaurant)
 
 
+@app.route('/saved')
+def show_saved_restaurants():
+    """Show the user a list of their saved restaurants."""
+
+    return render_template("saved_list.html")
+
+
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
     connect_to_db(app)
