@@ -103,7 +103,9 @@ def show_all_restaurants():
 def show_restaurant_id(rest_id):
     """Show details of a restaurant."""
 
-    return render_template("restaurant_details.html")
+    restaurant = crud.get_restaurant_by_id(rest_id)
+
+    return render_template("restaurant_details.html", restaurant=restaurant)
 
 
 if __name__ == "__main__":
