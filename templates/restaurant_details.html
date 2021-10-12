@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}It's Brunch Time!{% endblock %}
+{% block title %}{{ restaurant.rest_name }}{% endblock %}
 {% block head %}{% endblock %}
 {% block body %}
     <h1>{{ restaurant.rest_name }}</h1>
+    <section>
+        {{ restaurant.img_url }}
+    </section>
 {% endblock %}
 {% block after_body %}{% endblock %}
