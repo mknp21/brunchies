@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}{{ restaurant.rest_name }}{% endblock %}
-{% block head %}{% endblock %}
+{% block head %}
+<script
+src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous"></script>
+{% endblock %}
 {% block body %}
 
     <h1><a href="{{ restaurant.url }}">{{ restaurant.rest_name }}</a></h1>
