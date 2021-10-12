@@ -6,6 +6,8 @@
 //   $('.saved-restaurants').append
 // }
 
-$('#save-restaurant').on('click', () => {
-    alert("Button Clicked!");
-})
+const button = document.querySelector('#save-restaurant');
+
+button.addEventListener('click', () => {
+    alert('Button Clicked!');
+});

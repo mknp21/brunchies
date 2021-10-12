@@ -1,30 +1,35 @@
 {% extends 'base.html' %}
+
 {% block title %}{{ restaurant.rest_name }}{% endblock %}
+
 {% block head %}
 <script
 src="https://code.jquery.com/jquery-3.4.1.js"
 integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 crossorigin="anonymous"></script>
 {% endblock %}
+
 {% block body %}
+    <main>
+        <h1><a href="{{ restaurant.url }}">{{ restaurant.rest_name }}</a></h1>
 
-    <h1><a href="{{ restaurant.url }}">{{ restaurant.rest_name }}</a></h1>
+        <img src="{{ restaurant.img_url }}">
 
-    <img src="{{ restaurant.img_url }}">
+        <p>
+            Price: {{ restaurant.price }}
+            Rating: {{ restaurant.rating }} 
+            Review Count: {{ restaurant.review_count }}
+        </p>
+        </br>
+        <p>
+            {{ restaurant.phone }}</br>
+            {{ restaurant.address }}</br>
+            {{ restaurant.city }} {{ restaurant.state }} {{ restaurant.zipcode }}</br>
+        </p>
+        </br>
 
-    <p>
-        Price: {{ restaurant.price }}
-        Rating: {{ restaurant.rating }} 
-        Review Count: {{ restaurant.review_count }}
-    </p>
-    </br>
-    <p>
-        {{ restaurant.phone }}</br>
-        {{ restaurant.address }}</br>
-        {{ restaurant.city }} {{ restaurant.state }} {{ restaurant.zipcode }}</br>
-    </p>
-    </br>
-
-    <button type="button" id="save-restaurant">Save Restaurant</button>
-
+        <button type="button" id="save-restaurant">Save Restaurant</button>
+    </main>
+    
+    <script src="/static/js/brunch-app.js"></script>
 {% endblock %}
