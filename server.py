@@ -13,8 +13,6 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
-# API_KEY = os.environ['YELP_KEY']
-# headers = {'Authorization': 'Bearer %s' % API_KEY}
 
 @app.route('/')
 def show_homepage():
@@ -73,7 +71,7 @@ def verify_login():
             flash("The password you entered is incorrect. Please try again.")
             return redirect("/login")
         else:
-            session["current_user"] = user.name
+            session["current_user"] = user.user_id
             flash("Login successful!")
             return redirect("/myprofile")
     else:
