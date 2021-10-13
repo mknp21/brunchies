@@ -113,12 +113,15 @@ def show_saved_restaurants():
 
     # restaurant = request.args.get('restaurant-name')
     user_id = session.get("current_user")
-    rest_id = # have to get from somewhere
+    user = crud.get_user_by_id(user_id)
 
-    saved_item = crud.create_saved_item(user_id, rest_id)
+    rest_id = # have to get from somewhere
+    restaurant = crud.get_restaurant_by_id(rest_id)
+
+    saved_item = crud.create_saved_item(user, restaurant)
 
     # query all saves from a user
-    # 
+    # all_saved_items = user.saves
 
     return render_template("saved_list.html")
 
