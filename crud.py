@@ -44,10 +44,10 @@ def create_restaurant(yelp_id,
 
     return restaurant
 
-def create_saved_item(user, restaurant):
+def create_saved_item(user_id, rest_id):
     """Create and return a new saved item."""
 
-    saved_item = SaveList(user=user, restaurant=restaurant)
+    saved_item = SaveList(user_id=user_id, rest_id=rest_id)
     db.session.add(saved_item)
     db.session.commit()
 
