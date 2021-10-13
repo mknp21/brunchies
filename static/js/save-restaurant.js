@@ -8,14 +8,8 @@ let restaurantName = $('#restaurant-name').first().html();
 
 function saveRestaurant(restaurantName) {
   alert('Restaurant saved!');
-  $('ul').append(restaurantName);
+  $('ul').append(`<li>${restaurantName}</li>`);
 };
 
 saveBtn.on('click', saveRestaurant);
 
-// saveBtn.on('click', () => {
-
-//   console.log(restaurantName)
-// //   $('ul').append(restaurantName);
-//   alert('Restaurant saved!');
-// })

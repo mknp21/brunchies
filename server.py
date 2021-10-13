@@ -110,6 +110,8 @@ def show_restaurant_id(rest_id):
 def show_saved_restaurants():
     """Show the user a list of their saved restaurants."""
 
+    restaurant = request.args.get('restaurant-name')
+
     return render_template("saved_list.html")
 
 

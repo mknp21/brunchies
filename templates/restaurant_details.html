@@ -8,26 +8,34 @@
 {% block body %}
     <main>
         <div>
-            <div>
-                <h1><a href="{{ restaurant.url }}" id="restaurant-name">{{ restaurant.rest_name }}</a></h1>
-            </div>
-            <div>
-                <img src="{{ restaurant.img_url }}">
-            </div>
-        <p>
-            Price: {{ restaurant.price }}
-            Rating: {{ restaurant.rating }} 
-            Review Count: {{ restaurant.review_count }}
-        </p>
-        </br>
-        <p>
-            {{ restaurant.phone }}</br>
-            {{ restaurant.address }}</br>
-            {{ restaurant.city }} {{ restaurant.state }} {{ restaurant.zipcode }}</br>
-        </p>
-        </br>
+            <form action="/saved">
+                <div>
+                    <h1><a href="{{ restaurant.url }}" id="restaurant-name">{{ restaurant.rest_name }}</a></h1>
+                </div>
 
-        <button type="button" id="save-button">Save Restaurant</button>
+                <div>
+                    <img src="{{ restaurant.img_url }}">
+                </div>
+
+                <div id="restaurant-info">
+                    <p>
+                        Price: {{ restaurant.price }}
+                        Rating: {{ restaurant.rating }} 
+                        Review Count: {{ restaurant.review_count }}
+                    </p>
+                    </br>
+                    <p>
+                        {{ restaurant.phone }}</br>
+                        {{ restaurant.address }}</br>
+                        {{ restaurant.city }} {{ restaurant.state }} {{ restaurant.zipcode }}</br>
+                    </p>
+                    </br>
+                </div>
+
+                <div>
+                    <button type="button" id="save-button">Save Restaurant</button>
+                </div>
+            </form>
         </div>
     </main>
 
