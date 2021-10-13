@@ -2,12 +2,20 @@
 
 // Save a restaurant and add it to the user's list of saved restaurants
 
-// const saveRestaurant = () => {
-//   $('.saved-restaurants').append
-// }
+const saveBtn = $('#save-button');
+// const saveList = $('ul');
+let restaurantName = $('#restaurant-name').first().html();
 
-const button = document.querySelector('#save-restaurant');
+function saveRestaurant(restaurantName) {
+  alert('Restaurant saved!');
+  $('ul').append(restaurantName);
+};
 
-button.addEventListener('click', () => {
-    alert('Button Clicked!');
-});
+saveBtn.on('click', saveRestaurant);
+
+// saveBtn.on('click', () => {
+
+//   console.log(restaurantName)
+// //   $('ul').append(restaurantName);
+//   alert('Restaurant saved!');
+// })

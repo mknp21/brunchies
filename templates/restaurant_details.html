@@ -7,10 +7,13 @@
 
 {% block body %}
     <main>
-        <h1><a href="{{ restaurant.url }}">{{ restaurant.rest_name }}</a></h1>
-
-        <img src="{{ restaurant.img_url }}">
-
+        <div>
+            <div>
+                <h1><a href="{{ restaurant.url }}" id="restaurant-name">{{ restaurant.rest_name }}</a></h1>
+            </div>
+            <div>
+                <img src="{{ restaurant.img_url }}">
+            </div>
         <p>
             Price: {{ restaurant.price }}
             Rating: {{ restaurant.rating }} 
@@ -24,7 +27,8 @@
         </p>
         </br>
 
-        <button type="button" id="save-restaurant">Save Restaurant</button>
+        <button type="button" id="save-button">Save Restaurant</button>
+        </div>
     </main>
 
     <script src="/static/js/save-restaurant.js"></script>
