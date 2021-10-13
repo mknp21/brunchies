@@ -56,8 +56,13 @@ def get_users():
 
     return User.query.all()
 
+def get_user_by_id(user_id):
+    """Return a user by their id."""
+
+    return User.query.get(user_id)
+
 def get_user_by_email(email):
-    """Return user email"""
+    """Return a user by email."""
 
     return User.query.filter(User.email == email).one()
 
