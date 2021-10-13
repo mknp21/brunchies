@@ -40,6 +40,7 @@ def create_new_account():
     crud.create_user(name, email, password, zipcode)
 
     return redirect("/myprofile")
+    # return render_template("user_profile.html", name=name, email=email, zipcode=zipcode)
 
 
 @app.route('/login')
@@ -110,9 +111,17 @@ def show_restaurant_id(rest_id):
 def show_saved_restaurants():
     """Show the user a list of their saved restaurants."""
 
-    restaurant = request.args.get('restaurant-name')
+    # restaurant = request.args.get('restaurant-name')
+    user_id = session.get("current_user")
+    rest_id = # have to get from somewhere
+
+    
 
     return render_template("saved_list.html")
+
+# need a route that handles a POST request
+# need to get restaurant id and user id in order to use crud fxn and create a saved item
+# from the saved page, i can query to see all the restaurants a user has saved
 
 
 if __name__ == "__main__":
