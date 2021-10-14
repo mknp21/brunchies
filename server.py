@@ -61,13 +61,9 @@ def verify_login():
     email = request.form.get("email")
     password = request.form.get("password")
 
-    users = crud.get_users()
-    user_emails = []
-    for user in users:
-        user_emails.append(user.email)
+    user = crud.get_user_by_email(email)
 
-    if email in user_emails:
-        user = crud.get_user_by_email(email)
+    if user != None:
         if password != user.pw:
             flash("The password you entered is incorrect. Please try again.")
             return redirect("/login")

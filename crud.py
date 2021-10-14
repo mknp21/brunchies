@@ -66,7 +66,7 @@ def get_user_by_id(user_id):
 def get_user_by_email(email):
     """Return a user by email."""
 
-    return User.query.filter(User.email == email).one()
+    return User.query.filter(User.email == email).first()
 
 def get_restaurants():
     """Return all restaurants."""
