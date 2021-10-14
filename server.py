@@ -105,24 +105,30 @@ def show_restaurant_id(rest_id):
 
     return render_template("restaurant_details.html", restaurant=restaurant)
 
+@app.route('/brunchspots/<rest_id>', methods=['POST'])
+def save_restaurant(rest_id):
+    """Save a restaurant when the user clicks the save button."""
+
+    user_id = session.get("current_user")
+    user = crud.get_user_by_id(user_id)
+    restaurant = crud.get_restaurant_by_id(rest_id)
+    
+    crud.create_saved_item(user, restaurant)
+    flash("Restaurant saved!")
+
+    return redirect("/saved")
+
 
 @app.route('/saved')
 def show_saved_restaurants():
     """Show the user a list of their saved restaurants."""
 
-    # restaurant = request.args.get('restaurant-name')
+    # query all saves from a user
     user_id = session.get("current_user")
     user = crud.get_user_by_id(user_id)
+    all_saved_items = user.saves
 
-    # rest_id = # have to get from somewhere
-    # restaurant = crud.get_restaurant_by_id(rest_id)
-
-    # saved_item = crud.create_saved_item(user, restaurant)
-
-    # query all saves from a user
-    # all_saved_items = user.saves
-
-    return render_template("saved_list.html")
+    return render_template("saved_list.html", all_saved_items=all_saved_items)
 
 # need a route that handles a POST request
 # need to get restaurant id and user id in order to use crud fxn and create a saved item
@@ -133,4 +139,6 @@ if __name__ == "__main__":
     # DebugToolbarExtension(app)
     connect_to_db(app)
     app.run(debug=True)
+
+# post request on restaurant details id page or directly on saved route
     

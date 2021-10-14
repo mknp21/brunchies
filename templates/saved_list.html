@@ -3,7 +3,11 @@
 {% block head %}{% endblock %}
 {% block body %}
     <h1>My Saved Restaurants</h1>
-    <ul id="saved-restaurants"></ul>
+    {% for saved_item in all_saved_items %}
+    <ul id="saved-restaurants">
+        <li>{{ saved_item }}</li>
+    </ul>
+    {% endfor %}
     <p>
         See <a href="/brunchspots">all restaurants.</a>
     </p>

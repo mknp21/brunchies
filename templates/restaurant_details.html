@@ -8,7 +8,7 @@
 {% block body %}
     <main>
         <div>
-            <form action="/saved">
+            <form method="POST">
                 <div>
                     <h1><a href="{{ restaurant.url }}" id="restaurant-name">{{ restaurant.rest_name }}</a></h1>
                 </div>
@@ -33,7 +33,7 @@
                 </div>
 
                 <div>
-                    <button type="button" id="save-button">Save Restaurant</button>
+                    <button type="submit" id="save-button">Save Restaurant</button>
                 </div>
             </form>
         </div>
