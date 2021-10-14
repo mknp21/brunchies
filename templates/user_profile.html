@@ -4,6 +4,11 @@
 {% block body %}
     <h1>My Profile</h1>
     <p>
+        Name: {{ user.name }}</br>
+        Email: {{ user.email }}</br>
+        Zipcode: {{ user.zipcode }}</br>
+    </p>
+    <p>
         See your <a href="/saved">saved restaurants</a>.
     </p>
 {% endblock %}

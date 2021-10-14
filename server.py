@@ -39,8 +39,8 @@ def create_new_account():
 
     crud.create_user(name, email, password, zipcode)
 
-    return redirect("/myprofile")
-    # return render_template("user_profile.html", name=name, email=email, zipcode=zipcode)
+
+    return redirect("/login")
 
 
 @app.route('/login')
@@ -72,7 +72,7 @@ def verify_login():
             flash("The password you entered is incorrect. Please try again.")
             return redirect("/login")
         else:
-            session["current_user"] = user.user_id
+            session["current_user"] = user.user_id    # session = {"current_user": user_id(int)}
             flash("Login successful!")
             return redirect("/myprofile")
     else:
@@ -86,7 +86,10 @@ def verify_login():
 def show_user_profile():
     """Display the user's profile."""
 
-    return render_template("user_profile.html")
+    user_id = session.get("current_user")
+    user = crud.get_user_by_id(user_id)
+
+    return render_template("user_profile.html", user=user)
 
 
 @app.route('/brunchspots')
@@ -115,10 +118,10 @@ def show_saved_restaurants():
     user_id = session.get("current_user")
     user = crud.get_user_by_id(user_id)
 
-    rest_id = # have to get from somewhere
-    restaurant = crud.get_restaurant_by_id(rest_id)
+    # rest_id = # have to get from somewhere
+    # restaurant = crud.get_restaurant_by_id(rest_id)
 
-    saved_item = crud.create_saved_item(user, restaurant)
+    # saved_item = crud.create_saved_item(user, restaurant)
 
     # query all saves from a user
     # all_saved_items = user.saves
