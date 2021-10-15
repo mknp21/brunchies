@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
 {% block title %}Home - It's Brunch Time!{% endblock %}
-{% block head %}{% endblock %}
+{% block head %}
+<script src="/static/js/homepageMap.js"></script>
+{% endblock %}
 {% block body %}
-    <h1>It's Brunch Time!</h1>
-    <h2>Welcome to the brunch locator app!</h2>
+    <header>
+        <h1>It's Brunch Time!</h1>
+        <h2>Welcome to the brunch locator app!</h2>
+    </header>
+
+    <div id="map"></div>
+    <script
+        async 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCii84Z1-Xp0t0V9SkbuW03gSC5PraoSu4&callback=initMap">
+    </script>
+
     <p>
         <a href="/login">Sign In</a> or <a href="/createaccount">Create An Account</a>
     </p>
-    
+
 {% endblock %}
 
