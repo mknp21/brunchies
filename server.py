@@ -123,16 +123,10 @@ def save_restaurant(rest_id):
 def show_saved_restaurants():
     """Show the user a list of their saved restaurants."""
 
-    # query all saves from a user
     user_id = session.get("current_user")
-    user = crud.get_user_by_id(user_id)
-    all_saved_items = user.saves
+    all_saved_items = crud.get_saves_by_user_id(user_id)
 
     return render_template("saved_list.html", all_saved_items=all_saved_items)
-
-# need a route that handles a POST request
-# need to get restaurant id and user id in order to use crud fxn and create a saved item
-# from the saved page, i can query to see all the restaurants a user has saved
 
 
 if __name__ == "__main__":
@@ -140,5 +134,5 @@ if __name__ == "__main__":
     connect_to_db(app)
     app.run(debug=True)
 
-# post request on restaurant details id page or directly on saved route
+
     

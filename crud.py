@@ -78,6 +78,11 @@ def get_restaurant_by_id(rest_id):
 
     return Restaurant.query.get(rest_id)
 
+def get_saves_by_user_id(user_id):
+    """Return all saved items."""
+
+    return SaveList.query.filter(SaveList.user_id == user_id).all()
+
 
 if __name__ == '__main__':
     from server import app
