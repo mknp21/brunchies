@@ -5,7 +5,7 @@
     <h1>My Saved Restaurants</h1>
     {% for saved_item in all_saved_items %}
     <ul id="saved-restaurants">
-        <li>{{ saved_item.restaurant.rest_name }}</li>
+        <li><a href="/brunchspots/{{ saved_item.rest_id }}">{{ saved_item.restaurant.rest_name }}</a></li>
     </ul>
     {% endfor %}
     <p>
