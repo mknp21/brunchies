@@ -13,5 +13,11 @@ function initMap() {
         zoom: 10,
     });
 
+    const brunchMarker = new google.maps.Marker({
+        position: sfCoords,
+        title: 'SF',
+        map: map,
+    });
+
 }
 
