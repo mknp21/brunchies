@@ -1,6 +1,6 @@
 'use strict';
 
-const map;
+let map;
 
 function initMap() {
     const sfCoords = {

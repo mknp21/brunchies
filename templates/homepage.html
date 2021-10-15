@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}Home - It's Brunch Time!{% endblock %}
 {% block head %}
+<link rel="stylesheet" href="/static/css/maps.css"/>
 <script src="/static/js/homepageMap.js"></script>
+<script
+async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCii84Z1-Xp0t0V9SkbuW03gSC5PraoSu4&callback=initMap">
+</script>
 {% endblock %}
 {% block body %}
     <header>
@@ -9,11 +14,9 @@
         <h2>Welcome to the brunch locator app!</h2>
     </header>
 
+    <main>
     <div id="map"></div>
-    <script
-        async 
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCii84Z1-Xp0t0V9SkbuW03gSC5PraoSu4&callback=initMap">
-    </script>
+    </main>
 
     <p>
         <a href="/login">Sign In</a> or <a href="/createaccount">Create An Account</a>
