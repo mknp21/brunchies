@@ -12,6 +12,16 @@
   </head>
   
   <body>
+    <nav class="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/myprofile">Profile</a></li>
+        <li><a href="/saved">Saved</a></li>
+        <li><a href="/brunchspots">All Restaurants</a></li>
+      </ul>
+    </nav>
+
+  <div class="container">
     <!-- Show flashed messages -->
     {% with messages = get_flashed_messages() %}
       {% for message in messages %}
@@ -20,6 +30,7 @@
     {% endwith %}
 
     {% block body %}{% endblock %}
+  </div>
     
   </body>
 </html>
