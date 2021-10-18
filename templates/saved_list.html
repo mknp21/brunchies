@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block title %}My Saved Restaurants - It's Brunch Time!{% endblock %}
-{% block head %}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/maps.css"/>
+<script src="/static/js/savedPlacesMap.js"></script>
+<script
+async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCii84Z1-Xp0t0V9SkbuW03gSC5PraoSu4&callback=initMap">
+</script>
+{% endblock %}
 {% block body %}
     <h1>My Saved Restaurants</h1>
     {% for saved_item in all_saved_items %}
@@ -8,6 +15,9 @@
         <li><a href="/brunchspots/{{ saved_item.rest_id }}">{{ saved_item.restaurant.rest_name }}</a></li>
     </ul>
     {% endfor %}
+        
+    <div id="map"></div>
+    
     <p>
         See <a href="/brunchspots">all restaurants.</a>
     </p>
