@@ -23,8 +23,11 @@ def create_restaurant(yelp_id,
                       city,
                       zipcode,
                       state, 
+                      latitude,
+                      longitude,
                       img_url, 
-                      url):
+                      url,
+                      transactions):
     """Create and return a new restaurant."""
 
     restaurant = Restaurant(yelp_id=yelp_id, 
@@ -37,8 +40,11 @@ def create_restaurant(yelp_id,
                             city=city,
                             zipcode=zipcode,
                             state=state,
+                            latitude=latitude,
+                            longitude=longitude,
                             img_url=img_url,
-                            url=url)
+                            url=url,
+                            transactions=transactions)
     db.session.add(restaurant)
     db.session.commit()
 

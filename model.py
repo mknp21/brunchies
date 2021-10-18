@@ -36,8 +36,11 @@ class Restaurant(db.Model):
     city = db.Column(db.String(25), nullable=False)
     zipcode = db.Column(db.String(15), nullable=False)
     state = db.Column(db.String(5), nullable=False)
+    latitude = db.Column(db.Float, nullable=False)
+    longitude = db.Column(db.Float, nullable=False)
     img_url = db.Column(db.String(250), nullable=False)
     url = db.Column(db.String(250), nullable=False)
+    transactions = db.Column(db.String(50), nullable=True)
 
 
     # saves = a list of SaveList objects

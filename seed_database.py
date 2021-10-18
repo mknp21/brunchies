@@ -41,8 +41,11 @@ for business in businesses:
     city = business['location']['city']
     zipcode = business['location']['zip_code']
     state = business['location']['state']
+    latitude = business['coordinates']['latitude']
+    longitude = business['coordinates']['longitude']
     img_url = business['image_url']
     url = business['url']
+    transactions = business['transactions']
 
     restaurant = crud.create_restaurant(yelp_id, 
                                         rest_name, 
@@ -53,9 +56,12 @@ for business in businesses:
                                         address,
                                         city,
                                         zipcode,
-                                        state, 
+                                        state,
+                                        latitude,
+                                        longitude, 
                                         img_url, 
-                                        url)
+                                        url,
+                                        transactions)
     restaurants.append(restaurant)
 
 # Create test users
