@@ -17,6 +17,7 @@ function initMap() {
         position: sfCoords,
         title: 'SF',
         map: map,
+        icon: "/static/img/pink-pushpin.png"
     });
 
 }
