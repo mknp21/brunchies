@@ -129,6 +129,7 @@ def show_saved_restaurants():
     return render_template("saved_list.html", all_saved_items=all_saved_items)
 
 
+
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
     connect_to_db(app)
