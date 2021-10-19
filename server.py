@@ -39,7 +39,6 @@ def create_new_account():
 
     crud.create_user(name, email, password, zipcode)
 
-
     return redirect("/login")
 
 
@@ -78,11 +77,11 @@ def verify_login():
         return redirect("/")
 
 
-@app.route('/loggedout')
+@app.route('/logout')
 def log_out_user():
     """Log out the current user."""
 
-    session.clear()
+    del session["current_user"]
     flash("Logged out.")
 
     return redirect("/")
@@ -95,7 +94,11 @@ def show_user_profile():
     user_id = session.get("current_user")
     user = crud.get_user_by_id(user_id)
 
-    return render_template("user_profile.html", user=user)
+    if user != None:
+        return render_template("user_profile.html", user=user)
+    else:
+        flash("Please log in to view your account.")
+        return redirect("/login")
 
 
 @app.route('/brunchspots')
@@ -142,7 +145,6 @@ def show_saved_restaurants():
     all_saved_items = crud.get_saves_by_user_id(user_id)
 
     return render_template("saved_list.html", all_saved_items=all_saved_items)
-
 
 
 if __name__ == "__main__":
