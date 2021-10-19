@@ -20,12 +20,3 @@ function initMap() {
     });
 }
 
-function showFortune(evt) {
-    // Get fortune. Execute successFunction when fortune received:
-    $.get('/fortune', (res) => {
-      // Update text at #fortune-text div:
-      $('#fortune-text').html(res);
-    })
-  }
-  
-  $('#get-fortune-button').on('click', showFortune);
