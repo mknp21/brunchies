@@ -102,8 +102,13 @@ def show_restaurant_id(rest_id):
     """Show details of a restaurant."""
 
     restaurant = crud.get_restaurant_by_id(rest_id)
+    rest_saves = restaurant.saves
 
-    return render_template("restaurant_details.html", restaurant=restaurant)
+    count = 0
+    for save in rest_saves:
+        count += 1
+
+    return render_template("restaurant_details.html", restaurant=restaurant, count=count)
 
 @app.route('/brunchspots/<rest_id>', methods=['POST'])
 def save_restaurant(rest_id):
