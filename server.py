@@ -78,6 +78,16 @@ def verify_login():
         return redirect("/")
 
 
+@app.route('/loggedout')
+def log_out_user():
+    """Log out the current user."""
+
+    session.clear()
+    flash("Logged out.")
+
+    return redirect("/")
+
+
 @app.route('/myprofile')
 def show_user_profile():
     """Display the user's profile."""
