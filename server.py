@@ -144,7 +144,13 @@ def show_saved_restaurants():
     user_id = session.get("current_user")
     all_saved_items = crud.get_saves_by_user_id(user_id)
 
-    return render_template("saved_list.html", all_saved_items=all_saved_items)
+    if user_id != None:
+        return render_template("saved_list.html", all_saved_items=all_saved_items)
+    else:
+        flash("Please log in to access this feature.")
+        return redirect("/login")
+
+    # return render_template("saved_list.html", all_saved_items=all_saved_items)
 
 @app.route('/save-data.json')
 def retrieve_coord_data():
