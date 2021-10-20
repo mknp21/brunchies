@@ -27,6 +27,7 @@ function initMap() {
                 position: placeCoords,
                 title: restaurant.name,
                 map: map,
+                icon: "/static/img/pink-pushpin.png"
             });
         };
     });
