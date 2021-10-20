@@ -10,7 +10,7 @@ function initMap() {
 
     const mapOptions = {
         scrollwheel: false,
-        zoom: 12,
+        zoom: 13,
         center: sfCoords,
         styles: [
             {

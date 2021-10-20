@@ -10,7 +10,7 @@ function initMap() {
     
     map = new google.maps.Map(document.querySelector('#map'), {
         center: sfCoords,
-        zoom: 12,
+        zoom: 13,
         styles: [
             {
                 "featureType": "administrative.country",
