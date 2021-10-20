@@ -123,6 +123,7 @@ def show_restaurant_id(rest_id):
 
     return render_template("restaurant_details.html", restaurant=restaurant, count=count)
 
+
 @app.route('/brunchspots/<rest_id>', methods=['POST'])
 def save_restaurant(rest_id):
     """Save a restaurant when the user clicks the save button."""
@@ -150,7 +151,6 @@ def show_saved_restaurants():
         flash("Please log in to access this feature.")
         return redirect("/login")
 
-    # return render_template("saved_list.html", all_saved_items=all_saved_items)
 
 @app.route('/save-data.json')
 def retrieve_coord_data():
