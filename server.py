@@ -146,6 +146,23 @@ def show_saved_restaurants():
 
     return render_template("saved_list.html", all_saved_items=all_saved_items)
 
+@app.route('/save-data.json')
+def retrieve_coord_data():
+    """Return coordinates for saved restaurants."""
+
+    user_id = session.get("current_user")
+    all_saved_items = crud.get_saves_by_user_id(user_id)
+
+    save_coords = {}
+    rest_info = []
+    save_coords["results"] = rest_info
+
+    for item in all_saved_items:
+        rest_info.append({"name": item.restaurant.rest_name, "lat": item.restaurant.latitude, "long": item.restaurant.longitude})
+
+    return jsonify(save_coords)
+
+
 
 if __name__ == "__main__":
     # DebugToolbarExtension(app)

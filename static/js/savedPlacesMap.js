@@ -13,10 +13,42 @@ function initMap() {
         zoom: 12,
     });
 
-    const brunchMarker = new google.maps.Marker({
-        position: sfCoords,
-        title: 'SF',
-        map: map,
+    $.get('/save-data.json', res => {
+        for (const restaurant of res.results) {
+    
+            // const placeCoords = {
+            //     lat: Number(restaurant.lat),
+            //     long: Number(restaurant.long)
+            // };
+
+            const placeCoords = new google.maps.LatLng(Number(restaurant.lat), Number(restaurant.long));
+    
+            new google.maps.Marker({
+                position: placeCoords,
+                title: restaurant.name,
+                map: map,
+            });
+        };
     });
 }
 
+
+
+// let savedItem = $('#saved-item');
+
+// savedItem.on('mouseover', () => {
+//     alert('Works!');
+// });
+
+// $('#saved-item').on('mouseover', () => {
+//     $.post('/saved', res => {
+//         alert(res)
+//     })
+// })
+
+// $.post('/saved', response => {
+//     const savedCoord = {
+//         latitude:
+//         longitude:
+//     }
+// })
