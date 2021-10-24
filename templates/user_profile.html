@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}Profile - It's Brunch Time!{% endblock %}
-{% block head %}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/profile.css">
+{% endblock %}
 {% block body %}
     <h1>{{ user.name }}'s Profile</h1>
+    <div class="profile-pic-div">
+        <img src="/static/img/default-prof-pic.jpg" id="photo">
+        <input type="file" id="file">
+        <label for="file" id="uploadBtn">Choose Photo</label>
+    </div>
     <p>
         Name: {{ user.name }}</br>
         Email: {{ user.email }}</br>
