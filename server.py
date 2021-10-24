@@ -21,6 +21,13 @@ def show_homepage():
     return render_template("homepage.html")
 
 
+@app.route('/about')
+def show_about_page():
+    """Show About page."""
+
+    return render_template("about.html")    
+
+
 @app.route('/createaccount')
 def show_account_creation_page():
     """Show account creation page for new users."""
