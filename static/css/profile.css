@@ -43,4 +43,5 @@ body {
     font-family: sans-serif;
     font-size: 15px;
     cursor: pointer;
+    display: none;
 }
