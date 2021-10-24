@@ -1,7 +1,3 @@
-'use strict';
-
-let map;
-
 function initMap() {
     const sfCoords = {
         lat: 37.7749,
@@ -109,14 +105,65 @@ function initMap() {
         ]
     };
 
-    map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
-    const brunchMarker = new google.maps.Marker({
-        position: sfCoords,
-        title: 'SF',
-        map: map,
-        icon: '/static/img/pink-pushpin.png'
+    const map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+    
+    const locations = [];
+    $.get('/brunchcoords.json', res => {
+        for (const restaurant of res.results) {
+            locations.push({'lat': Number(restaurant.lat), 'lng': (restaurant.long)})
+        }});
+    
+    const markers = locations.map(function(location, i) {
+        return new google.maps.Marker({
+            position: location
+        });
     });
+    
+    const markerCluster = new MarkerClusterer(map, markers);
+    // const markers = $.get('/brunchcoords.json', res => {
+    //     for (const restaurant of res.results) {
+
+    //         const placeCoords = new google.maps.LatLng(Number(restaurant.lat), Number(restaurant.long));
+    
+    //         new google.maps.Marker({
+    //             position: placeCoords,
+    //             title: restaurant.name,
+    //             map: map,
+    //             icon: "/static/img/pink-pushpin.png"
+    //         });
+    //     };
+    // });
 
 }
+
+
+
+// function addMarkers() {
+//     $.get('/brunchcoords.json', res => {
+//         const locations = [];
+//         for (const restaurant of res.results) {
+//             locations.push({'name': restaurant.name, 'lat': Number(restaurant.lat), 'lng': (restaurant.long)})
+//         };
+
+//         locations.forEach(center => {
+//             markers.push(new google.maps.Marker({
+//                 position: {lat: center.lat, lng: center.lng},
+//                 map: null,
+//                 title: center.name,
+//                 icon: "/static/img/pink-pushpin.png"
+//             }));
+//         });
+//         drawMarkerClusterer();
+//     });
+// }
+
+// function drawMarkerClusterer() {
+//     let brunchCluster = new MarkerClusterer(
+//         this.map,
+//         markers
+//     );
+// }
+// ;
+
+
 

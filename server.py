@@ -109,6 +109,21 @@ def show_all_restaurants():
     
     return render_template("all_restaurants.html", restaurants=restaurants)
 
+@app.route('/brunchcoords.json')
+def retrieve_all_coords():
+    """Return the coordinates for all restaurants."""
+
+    all_restaurants = crud.get_restaurants()
+
+    coord_info = {}
+    coords = []
+    coord_info["results"] = coords
+
+    for restaurant in all_restaurants:
+        coords.append({"name":restaurant.rest_name, "lat":restaurant.latitude, "long":restaurant.longitude})
+
+    return jsonify(coord_info)
+
 
 @app.route('/brunchspots/<rest_id>')
 def show_restaurant_id(rest_id):
