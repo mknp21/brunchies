@@ -14,3 +14,13 @@ h1 {
   font-family: 'Lobster Two', cursive;
   text-align: center;
 }
+
+.modal-content {
+  background-color: #ddc0b4;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.modal-header {
+  background-color: #bd8270;
+}

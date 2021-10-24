@@ -38,15 +38,9 @@ def create_new_account():
     zipcode = request.form.get("zipcode")
 
     crud.create_user(name, email, password, zipcode)
+    flash("Account created! Please log in.")
 
-    return redirect("/login")
-
-
-@app.route('/login')
-def show_login_page():
-    """Show login page."""
-
-    return render_template("login_page.html")
+    return redirect("/")
 
 
 @app.route('/login', methods=['POST'])
@@ -98,7 +92,7 @@ def show_user_profile():
         return render_template("user_profile.html", user=user)
     else:
         flash("Please log in to view your account.")
-        return redirect("/login")
+        return redirect("/")
 
 
 @app.route('/brunchspots')
@@ -164,7 +158,7 @@ def show_saved_restaurants():
         return render_template("saved_list.html", all_saved_items=all_saved_items)
     else:
         flash("Please log in to access this feature.")
-        return redirect("/login")
+        return redirect("/")
 
 
 @app.route('/save-data.json')
@@ -182,7 +176,6 @@ def retrieve_coord_data():
         rest_info.append({"name": item.restaurant.rest_name, "lat": item.restaurant.latitude, "long": item.restaurant.longitude})
 
     return jsonify(save_coords)
-
 
 
 if __name__ == "__main__":
