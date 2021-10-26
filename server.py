@@ -26,10 +26,10 @@ def show_about_page():
     """Show About page."""
 
     rest_7 = crud.get_restaurant_by_id(7)
-    rest_19 = crud.get_restaurant_by_id(19)
-    rest_22 = crud.get_restaurant_by_id(22)
+    rest_18 = crud.get_restaurant_by_id(18)
+    rest_21 = crud.get_restaurant_by_id(21)
 
-    return render_template("about.html", rest_7=rest_7, rest_19=rest_19, rest_22=rest_22)    
+    return render_template("about.html", rest_7=rest_7, rest_18=rest_18, rest_21=rest_21)    
 
 
 @app.route('/createaccount')
