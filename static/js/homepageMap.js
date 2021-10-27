@@ -116,7 +116,7 @@ function initMap() {
     // const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     // const locations = [];
-    // $.get('/brunchcoords.json', res => {
+    // $.get('/restinfo.json', res => {
     //     console.log("get reqest made, response stuff")
     //   for (const restaurant of res.results) {
     //     locations.push({'lat': Number(restaurant.lat), 'lng': (restaurant.long)})
@@ -133,7 +133,7 @@ function initMap() {
     //   console.log({markers})
     
     // pins all restaurants to the map
-    // const markers = $.get('/brunchcoords.json', res => {
+    // const markers = $.get('/restinfo.json', res => {
     //     for (const restaurant of res.results) {
 
     //         const placeCoords = new google.maps.LatLng(Number(restaurant.lat), Number(restaurant.long));
@@ -150,7 +150,7 @@ function initMap() {
     // const markers = []
 
     // REMEMBER THIS WORKS!!!
-    $.get('/brunchcoords.json', res => {
+    $.get('/restinfo.json', res => {
       for (const restaurant of res.results) {
 
         const placeCoords = new google.maps.LatLng(Number(restaurant.lat), Number(restaurant.long));
@@ -173,7 +173,7 @@ window.initMap = initMap;
 
 // may or may not need this here
 // const locations = [];
-// $.get('/brunchcoords.json', res => {
+// $.get('/restinfo.json', res => {
 //     console.log("int he external get")
 //     for (const restaurant of res.results) {
 //         locations.push({'lat': Number(restaurant.lat), 'lng': (restaurant.long)})
@@ -189,7 +189,7 @@ window.initMap = initMap;
 
 // ignore everything below this line
 // function addMarkers() {
-//     $.get('/brunchcoords.json', res => {
+//     $.get('/restinfo.json', res => {
 //         const locations = [];
 //         for (const restaurant of res.results) {
 //             locations.push({'name': restaurant.name, 'lat': Number(restaurant.lat), 'lng': (restaurant.long)})

@@ -114,20 +114,31 @@ def show_all_restaurants():
     
     return render_template("all_restaurants.html", restaurants=restaurants)
 
-@app.route('/brunchcoords.json')
-def retrieve_all_coords():
+
+@app.route('/restinfo.json')
+def retrieve_rest_info():
     """Return the coordinates for all restaurants."""
 
     all_restaurants = crud.get_restaurants()
 
-    coord_info = {}
-    coords = []
-    coord_info["results"] = coords
+    rest_info = {}
+    info_details = []
+    rest_info["results"] = info_details
 
     for restaurant in all_restaurants:
-        coords.append({"name":restaurant.rest_name, "lat":restaurant.latitude, "long":restaurant.longitude})
+        info_details.append(
+            {
+                "name":restaurant.rest_name,
+                "zipcode":restaurant.zipcode,
+                "price":restaurant.price,
+                "rating":restaurant.rating,
+                "rev_count":restaurant.review_count,
+                "transactions":restaurant.transactions,
+                "lat":restaurant.latitude, 
+                "long":restaurant.longitude
+                })
 
-    return jsonify(coord_info)
+    return jsonify(rest_info)
 
 
 @app.route('/brunchspots/<rest_id>')
