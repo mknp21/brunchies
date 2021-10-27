@@ -25,6 +25,11 @@ body {
     border: 1px solid white
 }
 
+#photo {
+    height: 100%;
+    width: 100%;
+}
+
 #file {
     display: none;
 }
@@ -37,11 +42,12 @@ body {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    background: rgb(0,0,0,0.7);
-    color: white;
+    background: rgba(0,0,0,0.7);
+    color: whitesmoke;
     line-height: 30px;
     font-family: sans-serif;
     font-size: 15px;
     cursor: pointer;
-    display: none;
+    /* removes choose photo from browser */
+    display: none; 
 }
