@@ -4,12 +4,7 @@
 <link rel="stylesheet" href="/static/css/maps.css"/>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
-<script src="/static/js/markerclusterer_compiled.js"></script>
 <script src="/static/js/homepageMap.js"></script>
-<script
-async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCii84Z1-Xp0t0V9SkbuW03gSC5PraoSu4&callback=initMap">
-</script>
 {% endblock %}
 
 {% block body %}
@@ -53,4 +48,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCii84Z1-Xp0t0V9SkbuW03gSC
   </div>
 </div>
 {% endblock %}
-
+{% block afterhtml %}
+<script
+async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCii84Z1-Xp0t0V9SkbuW03gSC5PraoSu4&callback=initMap">
+</script>
+{% endblock %}

@@ -1,3 +1,9 @@
+// import { MarkerClusterer } from "@googlemaps/markerclusterer";
+
+let map;
+let markers = [];
+
+
 function initMap() {
     const sfCoords = {
         lat: 37.7749,
@@ -105,21 +111,28 @@ function initMap() {
         ]
     };
 
-    const map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+    map = new google.maps.Map(document.querySelector('#map'), mapOptions);
     
-    const locations = [];
-    $.get('/brunchcoords.json', res => {
-        for (const restaurant of res.results) {
-            locations.push({'lat': Number(restaurant.lat), 'lng': (restaurant.long)})
-        }});
+    // const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    // const locations = [];
+    // $.get('/brunchcoords.json', res => {
+    //     console.log("get reqest made, response stuff")
+    //   for (const restaurant of res.results) {
+    //     locations.push({'lat': Number(restaurant.lat), 'lng': (restaurant.long)})
+    // }});
+
+    // const markers = locations.map((location, i) => {
+    //     // console.log("location is ", location)
+    //     return new google.maps.Marker({
+    //       position: location,
+    //       label: labels[i % labels.length],
+    //     });
+    //   });
     
-    const markers = locations.map(function(location, i) {
-        return new google.maps.Marker({
-            position: location
-        });
-    });
+    //   console.log({markers})
     
-    const markerCluster = new MarkerClusterer(map, markers);
+    // pins all restaurants to the map
     // const markers = $.get('/brunchcoords.json', res => {
     //     for (const restaurant of res.results) {
 
@@ -134,10 +147,47 @@ function initMap() {
     //     };
     // });
 
+    // const markers = []
+
+    // REMEMBER THIS WORKS!!!
+    $.get('/brunchcoords.json', res => {
+      for (const restaurant of res.results) {
+
+        const placeCoords = new google.maps.LatLng(Number(restaurant.lat), Number(restaurant.long));
+    
+        markers.push(new google.maps.Marker({
+            position: placeCoords,
+            title: restaurant.name,
+            map: map,
+            icon: "/static/img/pink-pushpin.png"
+        }));
+      };
+    });
+
+    const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
+
 }
 
+// REMEMBER THIS WORKS!!!
+window.initMap = initMap;
+
+// may or may not need this here
+// const locations = [];
+// $.get('/brunchcoords.json', res => {
+//     console.log("int he external get")
+//     for (const restaurant of res.results) {
+//         locations.push({'lat': Number(restaurant.lat), 'lng': (restaurant.long)})
+//     }});
 
 
+
+
+
+
+
+
+
+// ignore everything below this line
 // function addMarkers() {
 //     $.get('/brunchcoords.json', res => {
 //         const locations = [];
@@ -160,10 +210,10 @@ function initMap() {
 // function drawMarkerClusterer() {
 //     let brunchCluster = new MarkerClusterer(
 //         this.map,
-//         markers
+//         markers,
 //     );
-// }
-// ;
+// };
 
+// window.initMap = initMap;
 
 
