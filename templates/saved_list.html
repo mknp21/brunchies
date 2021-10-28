@@ -2,21 +2,24 @@
 {% block title %}My Saved Restaurants - It's Brunch Time!{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="/static/css/maps.css"/>
-<script src="/static/js/savedPlacesMap.js"></script>
-<script
-async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCii84Z1-Xp0t0V9SkbuW03gSC5PraoSu4&callback=initMap">
-</script>
 {% endblock %}
 {% block body %}
 <h1>My Saved Restaurants</h1>
 <ul id="saved-restaurants">
   {% for saved_item in all_saved_items %}
     <li id="saved-item">
-      <a href="/brunchspots/{{ saved_item.rest_id }}">{{ saved_item.restaurant.rest_name }}</a>
+      <form action="/saved" method="POST">
+        <input type="hidden" name="restaurant" value="{{ saved_item.restaurant.rest_id }}"/>
+        <a href="/brunchspots/{{ saved_item.rest_id }}">{{ saved_item.restaurant.rest_name }}</a>
+        <button type="submit" id="delete-btn">Delete</button>
+      </form>
     </li>
   {% endfor %}
 </ul>
 <div id="map"></div>
-<script src="/static/js/save-restaurant.js"></script>
+<script src="/static/js/savedPlaces.js"></script>
+<script
+async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCii84Z1-Xp0t0V9SkbuW03gSC5PraoSu4&callback=initMap">
+</script>
 {% endblock %}

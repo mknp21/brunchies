@@ -89,6 +89,12 @@ def get_saves_by_user_id(user_id):
 
     return SaveList.query.filter(SaveList.user_id == user_id).all()
 
+def delete_saved_item(user_id, rest_id):
+    """Delete a saved item."""
+
+    SaveList.query.filter(SaveList.user_id == user_id, SaveList.rest_id == rest_id).delete()
+    db.session.commit()
+
 
 if __name__ == '__main__':
     from server import app

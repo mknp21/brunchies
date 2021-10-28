@@ -184,6 +184,17 @@ def show_saved_restaurants():
         flash("Please log in to access this feature.")
         return redirect("/")
 
+@app.route('/saved', methods=['POST'])
+def delete_saved_restaurant():
+    """Delete a saved restaurant."""
+
+    user_id = session.get("current_user")
+    rest_id = request.form["restaurant"]
+
+    crud.delete_saved_item(user_id, rest_id)
+
+    return redirect("/saved")
+
 
 @app.route('/save-data')
 def retrieve_coord_data():
@@ -200,6 +211,8 @@ def retrieve_coord_data():
         rest_info.append({"name": item.restaurant.rest_name, "lat": item.restaurant.latitude, "long": item.restaurant.longitude})
 
     return save_coords
+
+
 
 
 if __name__ == "__main__":
