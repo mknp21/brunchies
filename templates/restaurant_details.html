@@ -1,44 +1,35 @@
 {% extends 'base.html' %}
-
 {% block title %}Details - {{ restaurant.rest_name }}{% endblock %}
-
-{% block head %}
-{% endblock %}
-
+{% block head %}{% endblock %}
 {% block body %}
-    <main>
-        <div>
-            <form method="POST">
-                <div>
-                    <h1>{{ restaurant.rest_name }}</h1>
-                </div>
+<main>
+  <div>
+    <form method="POST">
+      <div>
+        <h1>{{ restaurant.rest_name }}</h1>
+      </div>
+      <div>
+        <img src="{{ restaurant.img_url }}">
+      </div>
 
-                <div>
-                    <img src="{{ restaurant.img_url }}">
-                </div>
-
-                <div id="restaurant-info">
-                    <p>
-                        Price: {{ restaurant.price }}
-                        Rating: {{ restaurant.rating }} 
-                        Review Count: {{ restaurant.review_count }}
-                    </p>
-                    </br>
-                    <p>
-                        {{ restaurant.phone }}</br>
-                        {{ restaurant.address }}</br>
-                        {{ restaurant.city }} {{ restaurant.state }} {{ restaurant.zipcode }}</br>
-                    </p>
-                    </br>
-                </div>
-
-                <div>
-                    <p>This restaurant has been saved {{ count }} time(s)!</p>
-                    <button type="submit" id="save-button">Save Restaurant</button>
-                </div>
-            </form>
-        </div>
-    </main>
-
-    <script src="/static/js/save-restaurant.js"></script>
+      <div id="restaurant-info">
+        <p>
+            Price: {{ restaurant.price }}
+            Rating: {{ restaurant.rating }} 
+            Review Count: {{ restaurant.review_count }}
+        </p></br>
+        <p>
+            {{ restaurant.phone }}</br>
+            {{ restaurant.address }}</br>
+            {{ restaurant.city }} {{ restaurant.state }} {{ restaurant.zipcode }}</br>
+        </p></br>
+      </div>
+      <div>
+        <p>This restaurant has been saved {{ count }} time(s)!</p>
+        <button type="submit" id="save-button">Save Restaurant</button>
+      </div>
+    </form>
+  </div>
+</main>
+<script src="/static/js/save-restaurant.js"></script>
 {% endblock %}

@@ -2,27 +2,23 @@
 {% block title %}Profile - It's Brunch Time!{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="/static/css/profile.css">
-
 {% endblock %}
-
 {% block body %}
-    <h1>{{ user.name }}'s Profile</h1>
-    <div class="profile-pic-div">
-        <img src="/static/img/default-prof-pic.jpg" id="photo">
-        <input type="file" id="file">
-        <label for="file" id="uploadBtn">Choose Photo</label>
-    </div>
-
-    <div>
-    <p>
-        Name: {{ user.name }}</br>
-        Email: {{ user.email }}</br>
-        Zipcode: {{ user.zipcode }}</br>
-    </p>
-    <p>
-        See your <a href="/saved">saved restaurants</a>.
-    </p>
-    </div>
-
-    <script src="/static/js/profPic.js"></script>
+<h1>{{ user.name }}'s Profile</h1>
+<div class="profile-pic-div">
+  <img src="/static/img/default-prof-pic.jpg" id="photo">
+  <input type="file" id="file">
+  <label for="file" id="uploadBtn">Choose Photo</label>
+</div>
+<div>
+  <p>
+    Name: {{ user.name }}</br>
+    Email: {{ user.email }}</br>
+    Zipcode: {{ user.zipcode }}</br>
+  </p>
+  <p>
+    See your <a href="/saved">saved restaurants</a>.
+  </p>
+</div>
+<script src="/static/js/profPic.js"></script>
 {% endblock %}

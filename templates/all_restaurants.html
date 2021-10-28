@@ -5,21 +5,15 @@
 {% endblock %}
 {% block body %}
 <div class="container">
-    <h1>Brunch Locations</h1>
-
-    <div id="searchWrapper">
-        <input 
-            type="text"
-            name="searchBar"
-            id="searchBar"
-            placeholder="Search By Name, Zipcode, or Price"/>
-    </div>
-
-    <ul id="all-restaurants">
-        <!-- {% for restaurant in restaurants %}
-        <li id="restaurant"><a href="/brunchspots/{{ restaurant.rest_id }}">{{ restaurant.rest_name }}</li>
-        {% endfor %} -->
-    </ul>
+  <h1>Brunch Locations</h1>
+  <div id="searchWrapper">
+    <input 
+        type="text"
+        name="searchBar"
+        id="searchBar"
+        placeholder="Search By Name, Zipcode, or Price"/>
+  </div>
+  <ul id="all-restaurants"></ul>
 </div>
 
 <script src="/static/js/search.js"></script>

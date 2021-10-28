@@ -2,49 +2,73 @@
 {% block title %}Home - It's Brunch Time!{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="/static/css/maps.css"/>
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+<script crossorigin 
+        src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 <script src="/static/js/homepageMap.js"></script>
 {% endblock %}
-
 {% block body %}
   <main>
     <h1>It's Brunch Time!</h1>
     <div id="map"></div>
   </main>
 
-<button type="button" class="btn btn-primary mx-auto d-block mt-5" data-bs-toggle="modal" data-bs-target="#modalForm">
+<button type="button" 
+        class="btn btn-primary mx-auto d-block mt-5" 
+        data-bs-toggle="modal" 
+        data-bs-target="#modalForm">
   Log In
 </button>
 
-<div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" 
+     id="modalForm" 
+     tabindex="-1" 
+     aria-labelledby="exampleModalLabel" 
+     aria-hidden="true">
   <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form method="POST" action="/login">
-                  <div class="mb-3">
-                      <label class="form-label">Email Address</label>
-                      <input type="text" class="form-control" id="email" name="email" placeholder="Email" />
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label">Password</label>
-                      <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
-                  </div>
-                  <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="rememberMe" />
-                      <label class="form-check-label" for="rememberMe">Remember me</label>
-                  </div>
-                  <div class="modal-footer d-block">
-                      <p class="float-start">Don't have an account yet? <a href="/createaccount">Sign Up</a></p>
-                      <button type="submit" class="btn btn-warning float-end">Submit</button>
-                  </div>
-              </form>
-          </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <button type="button" 
+                class="btn-close" 
+                data-bs-dismiss="modal" 
+                aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        <form method="POST" action="/login">
+          <div class="mb-3">
+            <label class="form-label">Email Address</label>
+            <input type="text" 
+                   class="form-control" 
+                   id="email" 
+                   name="email" 
+                   placeholder="Email" />
+          </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" 
+                     class="form-control" 
+                     id="password" 
+                     name="password" 
+                     placeholder="Password" />
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" 
+                     class="form-check-input" 
+                     id="rememberMe" />
+              <label class="form-check-label" 
+                     for="rememberMe">Remember me</label>
+            </div>
+            <div class="modal-footer d-block">
+              <p class="float-start">Don't have an account yet?
+                <a href="/createaccount">Sign Up</a>
+              </p>
+              <button type="submit" 
+                      class="btn btn-warning float-end">Submit</button>
+            </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
