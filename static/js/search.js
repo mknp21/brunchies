@@ -8,14 +8,16 @@ console.log('brunchList =', brunchList.children);
 
 // event listener for dynamic search bar
 searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value.toLowerCase();
+    const searchString = e.target.value.toString().toLowerCase();
+    console.log(searchString);
 
     // want to filter by name, zipcode/distance, rating, and price
     const filteredRestaurants = restaurants.filter((restaurant) => {
         return (
             restaurant.name.toLowerCase().includes(searchString) || 
             restaurant.zipcode.includes(searchString) || 
-            restaurant.price == searchString);
+            restaurant.price == searchString ||
+            restaurant.rating.toString().includes(searchString));
     });
     console.log('filtered restaurants =', filteredRestaurants);
     displayRestaurants(filteredRestaurants);
