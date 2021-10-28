@@ -151,7 +151,7 @@ function initMap() {
 
     // REMEMBER THIS WORKS!!!
     $.get('/restinfo.json', res => {
-      for (const restaurant of res.results) {
+      for (const restaurant of JSON.parse(res).results) {
 
         const placeCoords = new google.maps.LatLng(Number(restaurant.lat), Number(restaurant.long));
     

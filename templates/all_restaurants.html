@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
 {% block title %}All Restaurants - It's Brunch Time!{% endblock %}
-{% block head %}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/restaurants.css">
+{% endblock %}
 {% block body %}
+<div class="container">
     <h1>Brunch Locations</h1>
+
     <div id="searchWrapper">
         <input 
             type="text"
             name="searchBar"
             id="searchBar"
-            placeholder="Search For A Restaurant"/>
+            placeholder="Search By"/>
     </div>
-    {% for restaurant in restaurants %}
-    <ul id="all-restaurants">
-        <li><a href="/brunchspots/{{ restaurant.rest_id }}">{{ restaurant.rest_name }}</li>
-    </ul>
-    {% endfor %}
 
-    <script src="/static/js/search.js"></script>
+    <ul id="all-restaurants">
+        <!-- {% for restaurant in restaurants %}
+        <li id="restaurant"><a href="/brunchspots/{{ restaurant.rest_id }}">{{ restaurant.rest_name }}</li>
+        {% endfor %} -->
+    </ul>
+</div>
+
+<script src="/static/js/search.js"></script>
 {% endblock %}

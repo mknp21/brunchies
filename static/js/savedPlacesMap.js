@@ -108,7 +108,7 @@ function initMap() {
         ]
     });
 
-    $.get('/save-data.json', res => {
+    $.get('/save-data', res => {
         for (const restaurant of res.results) {
 
             const placeCoords = new google.maps.LatLng(Number(restaurant.lat), Number(restaurant.long));

@@ -1,6 +1,6 @@
 """Server for brunch locator app."""
 
-from flask import (Flask, render_template, request, flash, jsonify, session, redirect)
+from flask import (Flask, render_template, request, flash, json, session, redirect)
 from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined     # throws error for undefined variables
@@ -128,6 +128,7 @@ def retrieve_rest_info():
     for restaurant in all_restaurants:
         info_details.append(
             {
+                "id":restaurant.rest_id,
                 "name":restaurant.rest_name,
                 "zipcode":restaurant.zipcode,
                 "price":restaurant.price,
@@ -135,10 +136,11 @@ def retrieve_rest_info():
                 "rev_count":restaurant.review_count,
                 "transactions":restaurant.transactions,
                 "lat":restaurant.latitude, 
-                "long":restaurant.longitude
+                "long":restaurant.longitude,
+                "img":restaurant.img_url,
                 })
 
-    return jsonify(rest_info)
+    return json.dumps(rest_info)
 
 
 @app.route('/brunchspots/<rest_id>')
@@ -183,7 +185,7 @@ def show_saved_restaurants():
         return redirect("/")
 
 
-@app.route('/save-data.json')
+@app.route('/save-data')
 def retrieve_coord_data():
     """Return coordinates for saved restaurants."""
 
@@ -197,7 +199,7 @@ def retrieve_coord_data():
     for item in all_saved_items:
         rest_info.append({"name": item.restaurant.rest_name, "lat": item.restaurant.latitude, "long": item.restaurant.longitude})
 
-    return jsonify(save_coords)
+    return save_coords
 
 
 if __name__ == "__main__":
