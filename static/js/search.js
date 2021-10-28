@@ -37,7 +37,7 @@ const displayRestaurants = (restaurants) => {
         .map((restaurant) => {
             return `
             <li class="restaurant">
-                <h2>${restaurant.name}</h2>
+                <h3><a href="/brunchspots/${restaurant.id}">${restaurant.name}</a></h3>
                 <p>Price: ${restaurant.price}</p>
                 <img src="${restaurant.img}"></img>
             </li>
