@@ -95,6 +95,7 @@ def get_restaurant_by_id(rest_id):
     """Return a restaurant using the restaurant id."""
 
     return Restaurant.query.get(rest_id)
+   
 
 def get_saves_by_user_id(user_id):
     """Return all saved items."""
