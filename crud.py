@@ -50,6 +50,18 @@ def create_restaurant(yelp_id,
 
     return restaurant
 
+# def create_review(yelp_id, creator, rating, content):
+#     """Create and return a new restaurant."""
+
+#     review = Review(yelp_id=yelp_id,
+#                     creator=creator,
+#                     rating=rating,
+#                     content=content)
+#     db.session.add(review)
+#     db.session.commit()
+
+#     return review   
+
 def create_saved_item(user, restaurant):
     """Create and return a new saved item."""
 
