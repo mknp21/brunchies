@@ -1,7 +1,7 @@
 """CRUD operations."""
 
 
-from model import db, User, Restaurant, SaveList, connect_to_db
+from model import db, User, Restaurant, Review, SaveList, connect_to_db
 
 
 def create_user(name, email, pw, zipcode):
@@ -50,17 +50,17 @@ def create_restaurant(yelp_id,
 
     return restaurant
 
-# def create_review(yelp_id, creator, rating, content):
-#     """Create and return a new restaurant."""
+def create_review(yelp_id, creator, rating, content):
+    """Create and return a new restaurant."""
 
-#     review = Review(yelp_id=yelp_id,
-#                     creator=creator,
-#                     rating=rating,
-#                     content=content)
-#     db.session.add(review)
-#     db.session.commit()
+    review = Review(yelp_id=yelp_id,
+                    creator=creator,
+                    rating=rating,
+                    content=content)
+    db.session.add(review)
+    db.session.commit()
 
-#     return review   
+    return review   
 
 def create_saved_item(user, restaurant):
     """Create and return a new saved item."""

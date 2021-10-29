@@ -69,20 +69,20 @@ for business in businesses:
 
 # Create reviews table
 # for yelp_id in yelp_ids:
-#     reviews_url = f"https://api.yelp.com/v3/businesses/{yelp_id}/reviews"
-#     reviews_res = requests.get(reviews_url, headers=headers)
-#     data = json.loads(reviews_res.text)
-#     reviews = data['reviews']
+    reviews_url = f"https://api.yelp.com/v3/businesses/{yelp_id}/reviews"
+    reviews_res = requests.get(reviews_url, headers=headers)
+    data = json.loads(reviews_res.text)
+    reviews = data['reviews']
 
-#     for review in reviews:
-#         creator = review['user']['name']
-#         rating = review['rating']
-#         content = review['text']
+    for review in reviews:
+        creator = review['user']['name']
+        rating = review['rating']
+        content = review['text']
 
-#         review = crud.create_review(yelp_id,
-#                                     creator,
-#                                     rating,
-#                                     content)
+        review = crud.create_review(yelp_id,
+                                    creator,
+                                    rating,
+                                    content)
 
 # Create test users
 for n in range(5):

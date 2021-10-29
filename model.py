@@ -48,22 +48,22 @@ class Restaurant(db.Model):
     def __repr__(self):
         return f"<Restaurant name={self.rest_name} id={self.rest_id} Yelp id={self.yelp_id}>"
 
-# class Review(db.Model):
-#     """Restaurant reviews."""
+class Review(db.Model):
+    """Restaurant reviews."""
 
-#     __tablename__ = "reviews"
+    __tablename__ = "reviews"
 
-#     review_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-#     yelp_id = db.Column(db.String(50), db.ForeignKey('restaurants.yelp_id'))
-#     creator = db.Column(db.String(50), nullable=False)
-#     rating = db.Column(db.Float, nullable=False)
-#     content = db.Column(db.String(500), nullable=False)
+    review_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    yelp_id = db.Column(db.String(50), nullable=False)
+    creator = db.Column(db.String(50), nullable=False)
+    rating = db.Column(db.Float, nullable=False)
+    content = db.Column(db.String(500), nullable=False)
 
 #     restaurant = db.relationship("Restaurant", backref="reviews")
 #     # review.restaurant returns related Restaurant object
 
-#     def __repr__(self):
-#         return f"<Review ID={self.review_id} rating={self.rating}>"
+    def __repr__(self):
+        return f"<Review ID={self.review_id} rating={self.rating}>"
 
 class SaveList(db.Model):
     """List of saved restaurants."""
