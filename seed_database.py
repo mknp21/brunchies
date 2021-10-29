@@ -85,16 +85,17 @@ for business in businesses:
                                     content)
 
 # Create test users
-for n in range(5):
+for n in range(10):
     name = 'First Last'
     email = f'testuser{n}@test.com'
     pw = f'password{n}'
     zipcode = f'5555{n}'
 
     user = crud.create_user(name, email, pw, zipcode)
-    random_restaurant = choice(restaurants)
 
     # create a save item
-    user_saved_item = crud.create_saved_item(user, random_restaurant)
+    for n in range(10):
+        random_restaurant = choice(restaurants)
+        user_saved_item = crud.create_saved_item(user, random_restaurant)
 
 
