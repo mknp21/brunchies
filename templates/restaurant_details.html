@@ -30,6 +30,14 @@
       </div>
     </form>
   </div>
+  <div id="reviews">
+    {% for review in reviews %}
+    <p>
+      {{ review.creator }}</br>
+      {{ review.rating }}</br>
+      {{ review.content }}</br>
+    </p></br>
+    {% endfor %}
+  </div>
 </main>
-<script src="/static/js/save-restaurant.js"></script>
 {% endblock %}

@@ -4,6 +4,7 @@ from flask import (Flask, render_template, request, flash, json, session, redire
 from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined     # throws error for undefined variables
+from random import choice
 
 import os
 import requests
@@ -149,12 +150,13 @@ def show_restaurant_id(rest_id):
 
     restaurant = crud.get_restaurant_by_id(rest_id)
     rest_saves = restaurant.saves
+    rest_reviews = restaurant.reviews
 
     count = 0
     for save in rest_saves:
         count += 1
 
-    return render_template("restaurant_details.html", restaurant=restaurant, count=count)
+    return render_template("restaurant_details.html", restaurant=restaurant, count=count, reviews=rest_reviews)
 
 
 @app.route('/brunchspots/<rest_id>', methods=['POST'])
@@ -169,6 +171,25 @@ def save_restaurant(rest_id):
     flash("Restaurant saved!")
 
     return redirect("/saved")
+
+
+@app.route('/choose-random')
+def choose_random_restaurant():
+    """Choose a random restaurant."""
+
+    user_id = session.get("current_user")
+
+    restaurants = crud.get_restaurants()
+    random_rest = choice(restaurants)
+
+    rest_id = random_rest.rest_id
+    
+    if user_id != None:
+        flash("Enjoy our pick!")
+        return redirect(f"/brunchspots/{rest_id}")
+    else:
+        flash("Please log in to access this feature.")
+        return redirect("/")
 
 
 @app.route('/saved')

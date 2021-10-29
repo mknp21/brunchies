@@ -40,7 +40,7 @@ const displayRestaurants = (restaurants) => {
             return `
             <li class="restaurant">
                 <h3><a href="/brunchspots/${restaurant.id}">${restaurant.name}</a></h3>
-                <p>Price: ${restaurant.price}</p>
+                <p>Rating: ${restaurant.rating} | ${restaurant.price}</p></br>
                 <img src="${restaurant.img}"></img>
             </li>
         `;

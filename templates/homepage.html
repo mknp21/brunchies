@@ -8,10 +8,18 @@
 <script src="/static/js/homepageMap.js"></script>
 {% endblock %}
 {% block body %}
-  <main>
-    <h1>It's Brunch Time!</h1>
-    <div id="map"></div>
-  </main>
+<main>
+  <h1>It's Brunch Time!</h1>
+  <p>Choose by district:</p>
+  <div id="map"></div>
+  <div>
+    <p>-or-</p>
+    <h4>Let us choose for you!</h4>
+    <form action="/choose-random">
+      <button type="submit">Yes pls!</button>
+    </form>
+  </div>
+</main>
 
 <button type="button" 
         class="btn btn-primary mx-auto d-block mt-5" 
