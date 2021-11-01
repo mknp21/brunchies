@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block title %}Home - It's Brunch Time!{% endblock %}
 {% block head %}
-<link rel="stylesheet" href="/static/css/maps.css"/>
+<link rel="stylesheet" 
+      href="/static/css/homepage.css">
+<!-- <link rel="stylesheet" href="/static/css/maps.css"/>
 <script crossorigin 
         src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
-<script src="/static/js/homepageMap.js"></script>
+<script src="/static/js/homepageMap.js"></script> -->
 {% endblock %}
 {% block body %}
-<main>
-  <h1>It's Brunch Time!</h1>
-  <p>Choose by district:</p>
+<!-- <main>
   <div id="map"></div>
   <div>
     <p>-or-</p>
@@ -19,14 +19,26 @@
       <button type="submit">Yes pls!</button>
     </form>
   </div>
-</main>
+</main> -->
 
-<button type="button" 
-        class="btn btn-primary mx-auto d-block mt-5" 
-        data-bs-toggle="modal" 
-        data-bs-target="#modalForm">
-  Log In
-</button>
+<div class="container">
+  <div class="position-absolute top-50 start-50 translate-middle" id="about">
+    <h1>About Brunchies</h1>
+    <figure class="text-center">
+      <blockquote class="blockquote">
+        <p>Work hard. Brunch harder.</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">Unknown</figcaption>
+    </figure>
+    <button type="button" 
+            id="loginBtn"
+            class="btn btn-primary mx-auto d-block mt-5" 
+            data-bs-toggle="modal" 
+            data-bs-target="#modalForm">
+      Log In
+    </button>
+  </div>
+</div>
 
 <div class="modal fade" 
      id="modalForm" 
@@ -80,9 +92,9 @@
   </div>
 </div>
 {% endblock %}
-{% block afterhtml %}
+<!-- {% block afterhtml %}
 <script
 async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCii84Z1-Xp0t0V9SkbuW03gSC5PraoSu4&callback=initMap">
 </script>
-{% endblock %}
+{% endblock %} -->

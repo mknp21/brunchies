@@ -1,0 +1,16 @@
+body {
+    background: url(/static/img/aboutBrunch1.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+#about {
+    background-color: rgba(221,192,180,0.75);
+    padding: 50px 100px;
+    border-radius: 25%;
+}
+
+#loginBtn {
+    background-color: #bd8270;
+    border-color: white;
+    border-radius: 30%;
+}
