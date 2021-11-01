@@ -147,7 +147,8 @@ function initMap() {
     //     };
     // });
 
-    // const markers = []
+    const markers = [];
+    // console.log(markers);
 
     // REMEMBER THIS WORKS!!!
     $.get('/restinfo.json', res => {
@@ -163,6 +164,26 @@ function initMap() {
         }));
       };
     });
+
+    for (const marker of markers) {
+        const contentString = `
+        <h1>${marker.title}</h1>
+        `;
+    
+        const infoWindow = new google.maps.infoWindow({
+            content: contentString,
+            maxWidth: 200,
+        });
+
+        marker.addListener("click", () => {
+            infoWindow.open({
+                anchor: marker,
+                map,
+                shouldFocus: false,
+            });
+        });
+    }
+
 
     const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
 

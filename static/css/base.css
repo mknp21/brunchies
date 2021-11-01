@@ -5,12 +5,12 @@ html, body {
   background-color: #ddc0b4;
 }
   
-body {
-  font-family: 'Source Sans Pro', sans-serif;
+body, p {
+  font-family: 'Open Sans', sans-serif;
   color: rgb(255, 255, 255);
 }
 
-h1 {
+h1, h2, h3, h4 {
   font-family: 'Lobster Two', cursive;
   text-align: center;
 }
@@ -21,7 +21,7 @@ h1 {
 
 .modal-content {
   background-color: #ddc0b4;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: rgb(255, 255, 255);
 }
 
