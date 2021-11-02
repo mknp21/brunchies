@@ -50,13 +50,15 @@ def create_restaurant(yelp_id,
 
     return restaurant
 
-def create_review(yelp_id, creator, rating, content):
+def create_review(yelp_id, creator, prof_pic, rating, content, date_created):
     """Create and return a new restaurant."""
 
     review = Review(yelp_id=yelp_id,
                     creator=creator,
+                    prof_pic=prof_pic,
                     rating=rating,
-                    content=content)
+                    content=content,
+                    date_created=date_created)
     db.session.add(review)
     db.session.commit()
 

@@ -76,13 +76,17 @@ for business in businesses:
 
     for review in reviews:
         creator = review['user']['name']
+        prof_pic = review['user']['image_url']
         rating = review['rating']
         content = review['text']
+        date_created = review['time_created']
 
         review = crud.create_review(yelp_id,
                                     creator,
+                                    prof_pic,
                                     rating,
-                                    content)
+                                    content,
+                                    date_created)
 
 # Create test users
 for n in range(10):

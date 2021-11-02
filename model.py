@@ -57,8 +57,10 @@ class Review(db.Model):
     # make yelp_id unique??
     yelp_id = db.Column(db.String(50), db.ForeignKey('restaurants.yelp_id'), nullable=False)
     creator = db.Column(db.String(50), nullable=False)
+    prof_pic = db.Column(db.String(250), nullable=True)
     rating = db.Column(db.Float, nullable=False)
     content = db.Column(db.String(500), nullable=False)
+    date_created = db.Column(db.String(50), nullable=False)
 
     restaurant = db.relationship("Restaurant", backref="reviews")
     # review.restaurant returns related Restaurant object
