@@ -4,9 +4,10 @@ body {
 }
 
 #about {
-    background-color: rgba(221,192,180,0.75);
+    background-color: rgba(221,192,180,0.85);
     padding: 50px 100px;
     border-radius: 25%;
+    text-shadow: gray;
 }
 
 #loginBtn {
@@ -14,3 +15,4 @@ body {
     border-color: white;
     border-radius: 30%;
 }
+

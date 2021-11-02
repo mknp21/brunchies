@@ -34,14 +34,14 @@
             id="loginBtn"
             class="btn btn-primary mx-auto d-block mt-5" 
             data-bs-toggle="modal" 
-            data-bs-target="#modalForm">
+            data-bs-target="#modalFormLogin">
       Log In
     </button>
   </div>
 </div>
 
 <div class="modal fade" 
-     id="modalForm" 
+     id="modalFormLogin" 
      tabindex="-1" 
      aria-labelledby="exampleModalLabel" 
      aria-hidden="true">
@@ -81,11 +81,69 @@
             </div>
             <div class="modal-footer d-block">
               <p class="float-start">Don't have an account yet?
-                <a href="/createaccount">Sign Up</a>
+                <a data-bs-toggle="modal" href="#modalFormCreateAcct" role="button">Sign Up</a>
               </p>
               <button type="submit" 
                       class="btn btn-warning float-end">Submit</button>
             </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" 
+     id="modalFormCreateAcct" 
+     tabindex="-1" 
+     aria-labelledby="exampleModalLabel" 
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create An Account</h5>
+        <button type="button" 
+                class="btn-close" 
+                data-bs-dismiss="modal" 
+                aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="/createaccount">
+          <div class="mb-3">
+            <label class="form-label">Enter first & last name:</label>
+            <input type="text" 
+                   class="form-control" 
+                   id="name" 
+                   name="name" 
+                   placeholder="First & Last Name" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Enter email address:</label>
+            <input type="email" 
+                   class="form-control" 
+                   id="email" 
+                   name="email" 
+                   placeholder="Email" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Enter password:</label>
+            <input type="password" 
+                    class="form-control" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Password" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Enter zipcode:</label>
+            <input type="text" 
+                    class="form-control" 
+                    id="zipcode" 
+                    name="zipcode" 
+                    placeholder="Zipcode" />
+          </div>
+          <div class="modal-footer d-block">
+            <button type="submit" 
+                    class="btn btn-warning float-end">Submit</button>
+          </div>
         </form>
       </div>
     </div>
