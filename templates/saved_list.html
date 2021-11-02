@@ -25,12 +25,17 @@
       <div class="col">
         <form action="/saved" method="POST">
           <input type="hidden" name="restaurant" value="{{ saved_item.restaurant.rest_id }}"/>
-          <div class="card" style="width: 100%;">
+          <div class="card text-center" style="width: 100%;">
           <div class="card-body">
-            <h5 class="card-title">{{ saved_item.restaurant.rest_name }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="/brunchspots/{{ saved_item.rest_id }}" class="card-link">Restaurant Page</a></br>
+            <h5 class="card-title">
+              <a href="/brunchspots/{{ saved_item.rest_id }}" class="card-link">{{ saved_item.restaurant.rest_name }}</a>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ saved_item.restaurant.phone }}</h6>
+            <p class="card-text">
+              {{ saved_item.restaurant.address }}</br>
+              {{ saved_item.restaurant.city }},
+              {{ saved_item.restaurant.zipcode }}</br>
+            </p>
             <button type="submit" id="delete-btn">Delete</button>
           </div>
           </div>

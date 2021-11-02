@@ -7,7 +7,7 @@ body {
     background-color: rgba(221,192,180,0.85);
     padding: 50px 100px;
     border-radius: 25%;
-    text-shadow: gray;
+    /* text-shadow: gray; */
 }
 
 #loginBtn {

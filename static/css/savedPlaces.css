@@ -1,12 +1,12 @@
-/* #savedCards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 20px;
-    padding: 40px;
-    margin: 0 auto;
-    text-align: center;
-} */
-
 .card {
-    background-color: #aa6f5d;
+    background-color: rgba(189,130,112,0.50);
+    border: 2px solid #bd8270;
+    border-radius: 25%;
+}
+
+#delete-btn {
+    background-color: #bd8270;
+    border-color: white;
+    border-radius: 30%;
+    color: white;
 }
