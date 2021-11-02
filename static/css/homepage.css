@@ -16,3 +16,11 @@ body {
     border-radius: 30%;
 }
 
+#loginModalLabel, #newAccountModalLabel {
+    font-family: 'Lobster Two', cursive;
+}
+
+#loginSubmitBtn, #newAccountBtn {
+    background-color: #aa6f5d;
+    color: white;
+}

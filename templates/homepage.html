@@ -23,7 +23,7 @@
 
 <div class="container">
   <div class="position-absolute top-50 start-50 translate-middle" id="about">
-    <h1>About Brunchies</h1>
+    <h1>Welcome to Brunchies!</h1>
     <figure class="text-center">
       <blockquote class="blockquote">
         <p>Work hard. Brunch harder.</p>
@@ -43,12 +43,12 @@
 <div class="modal fade" 
      id="modalFormLogin" 
      tabindex="-1" 
-     aria-labelledby="exampleModalLabel" 
+     aria-labelledby="loginModalLabel" 
      aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <h5 class="modal-title" id="loginModalLabel">Log In</h5>
         <button type="button" 
                 class="btn-close" 
                 data-bs-dismiss="modal" 
@@ -84,6 +84,7 @@
                 <a data-bs-toggle="modal" href="#modalFormCreateAcct" role="button">Sign Up</a>
               </p>
               <button type="submit" 
+                      id="loginSubmitBtn"
                       class="btn btn-warning float-end">Submit</button>
             </div>
         </form>
@@ -95,12 +96,12 @@
 <div class="modal fade" 
      id="modalFormCreateAcct" 
      tabindex="-1" 
-     aria-labelledby="exampleModalLabel" 
+     aria-labelledby="newAccountModalLabel" 
      aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create An Account</h5>
+        <h5 class="modal-title" id="newAccountModalLabel">Create An Account</h5>
         <button type="button" 
                 class="btn-close" 
                 data-bs-dismiss="modal" 
@@ -142,6 +143,7 @@
           </div>
           <div class="modal-footer d-block">
             <button type="submit" 
+                    id="newAccountBtn"
                     class="btn btn-warning float-end">Submit</button>
           </div>
         </form>
