@@ -118,7 +118,7 @@ function initMap() {
                 position: placeCoords,
                 title: restaurant.name,
                 map: map,
-                icon: "/static/img/map-marker.png"
+                icon: "/static/img/map-marker2.png"
             });
         };
     });

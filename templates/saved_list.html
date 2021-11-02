@@ -2,10 +2,11 @@
 {% block title %}My Saved Restaurants - It's Brunch Time!{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="/static/css/maps.css"/>
+<link rel="stylesheet" href="/static/css/savedPlaces.css"/>
 {% endblock %}
 {% block body %}
 <h1>My Saved Restaurants</h1>
-<ul id="saved-restaurants">
+<!-- <ul id="saved-restaurants">
   {% for saved_item in all_saved_items %}
     <li id="saved-item">
       <form action="/saved" method="POST">
@@ -16,7 +17,29 @@
     </li>
   {% endfor %}
     <li><a href="/brunchspots">Save another restaurant >></a></li>
-</ul>
+</ul> -->
+<div id="savedCards">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for saved_item in all_saved_items %}
+      <div class="col">
+        <form action="/saved" method="POST">
+          <input type="hidden" name="restaurant" value="{{ saved_item.restaurant.rest_id }}"/>
+          <div class="card" style="width: 100%;">
+          <div class="card-body">
+            <h5 class="card-title">{{ saved_item.restaurant.rest_name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/brunchspots/{{ saved_item.rest_id }}" class="card-link">Restaurant Page</a></br>
+            <button type="submit" id="delete-btn">Delete</button>
+          </div>
+          </div>
+        </form>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 <div id="map"></div>
 <script src="/static/js/savedPlaces.js"></script>
 <script
