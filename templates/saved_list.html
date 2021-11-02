@@ -25,7 +25,7 @@
       <div class="col">
         <form action="/saved" method="POST">
           <input type="hidden" name="restaurant" value="{{ saved_item.restaurant.rest_id }}"/>
-          <div class="card text-center" style="width: 100%;">
+          <div class="card text-center h-100" style="width: 100%;">
           <div class="card-body">
             <h5 class="card-title">
               <a href="/brunchspots/{{ saved_item.rest_id }}" class="card-link">{{ saved_item.restaurant.rest_name }}</a>
