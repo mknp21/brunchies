@@ -1,5 +1,5 @@
 .container {
-    padding: 40px;
+    padding: 20px;
     margin: 0 auto;
     max-width: 1000px;
     text-align: center;
@@ -14,8 +14,8 @@
 
 .restaurant {
     list-style-type: none;
-    background-color: #aa6f5d;
-    border-radius: 3px;
+    background-color: rgba(189,130,112,0.85);
+    border-radius: 10px;
     padding: 10px 20px;
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -23,17 +23,30 @@
         'name image'
         'info image';
     text-align: left;
+    align-items: center;
 }
 
-.restaurant > h3 {
+h1 {
+    text-shadow: 2px 2px gray;
+}
+
+a {
+    color: white;  
+}
+
+.restaurant > h2 {
     grid-area: name;
     margin-bottom: 0px;
+    text-align: left;
+    text-shadow: 1px 2px gray;
 }
 
-.restaurant > p {
+.restaurant > h5 {
     grid-area: info;
     margin: 0;
-    margin-top: -18px;
+    margin-top: 5px;
+    color: #FCDFD3;
+    text-shadow: 1px 1px gray;
 }
 
 .restaurant > img {
@@ -43,11 +56,12 @@
 
 #searchBar {
     width: 100%;
-    height: 32px;
+    height: 38px;
     border-radius: 3px;
     border: 1px solid #eaeaea;
+    margin-bottom: 20px;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #searchWrapper {
