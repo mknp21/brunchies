@@ -9,17 +9,30 @@ img {
 }
 
 body {
-    height: 100vh;
-    width: 100%;
+    background: url(/static/img/aboutBrunch1.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+#user-profile {
+    background-color: rgba(221,192,180,0.85);
+    padding: 50px 100px;
+    border-radius: 25%;
+    text-align: center;
+}
+
+h1, p {
+    text-shadow: 1px 2px gray;
 }
 
 .profile-pic-div {
     height: 200px;
     width: 200px;
-    position: absolute;
+    position: relative;
+    margin: auto;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid white
@@ -50,4 +63,8 @@ body {
     cursor: pointer;
     /* removes choose photo from browser */
     display: none; 
+}
+
+.offcanvas {
+    background-color: #bd8270;
 }

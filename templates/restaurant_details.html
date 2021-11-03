@@ -1,57 +1,54 @@
 {% extends 'base.html' %}
-{% block title %}Details - {{ restaurant.rest_name }}{% endblock %}
+{% block title %}{{ restaurant.rest_name }}{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="/static/css/restDetails.css"/>
 {% endblock %}
 {% block body %}
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col">
+      <form method="POST">
+        <div class="text-center" id="restaurant-info">
+          <h1>{{ restaurant.rest_name }}</h1>
+          <p>
+              Price: {{ restaurant.price }} |
+              Rating: {{ restaurant.rating }} |
+              Reviews: {{ restaurant.review_count }}
+          </p></br>
+          <p>
+              {{ restaurant.phone }}</br>
+              {{ restaurant.address }}</br>
+              {{ restaurant.city }}, {{ restaurant.state }} {{ restaurant.zipcode }}</br>
+          </p></br>
+          <p><em>This restaurant has been saved {{ count }} time(s)!</em></p>
+          <button type="submit" id="save-button">Save Restaurant</button>
+        </div>
+      </form>
+    </div>
 
-
-      <div>
-        <form method="POST">
-            <!-- <img src="{{ restaurant.img_url }}" class="card-img"> -->
-            <div class="text-center" id="restaurant-info">
-              <h1>{{ restaurant.rest_name }}</h1>
-              <p>
-                  Price: {{ restaurant.price }}
-                  Rating: {{ restaurant.rating }} 
-                  Review Count: {{ restaurant.review_count }}
-              </p></br>
-              <p>
-                  {{ restaurant.phone }}</br>
-                  {{ restaurant.address }}</br>
-                  {{ restaurant.city }} {{ restaurant.state }} {{ restaurant.zipcode }}</br>
-              </p></br>
-              <p>This restaurant has been saved {{ count }} time(s)!</p>
-              <button type="submit" id="save-button">Save Restaurant</button>
-            </div>
-        </form>
-      </div>
-
-      <!-- <div id="reviews">
-        {% for review in reviews %}
-        <p>
-          {{ review.creator }}</br>
-          {{ review.rating }}</br>
-          {{ review.content }}</br>
-        </p></br>
-        {% endfor %}
-      </div> -->
-
-      <div id="reviews">
-        <div class="container">
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            {% for review in reviews %}
-            <div class="col">
-                <div class="card text-center h-100" style="width: 100%;">
-                <div class="card-body">
-                  <h5 class="card-title">{{ review.creator }}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{{ review.rating }}</h6>
-                  <p class="card-text">{{ review.content }}</p>
+    <div class="col mt-5">
+      <div class="container" id="reviews">
+        <div class="row justify-content-md-center">
+          {% for review in reviews %}
+            <div class="card mb-3 text-center" style="max-width: 800px;">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-4">
+                  <img src="{{ review.prof_pic }}" class="img-fluid rounded-start" alt="...">
                 </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ review.creator }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ review.rating }}</h6>
+                    <p class="card-text">{{ review.content }}</p>
+                    <small class="text-muted">Created {{ review.date_created }}</small>
+                  </div>
                 </div>
+              </div>
             </div>
-            {% endfor %}
-          </div>
+          {% endfor %}
         </div>
       </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

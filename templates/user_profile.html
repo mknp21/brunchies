@@ -4,21 +4,23 @@
 <link rel="stylesheet" href="/static/css/profile.css">
 {% endblock %}
 {% block body %}
-<h1>{{ user.name }}'s Profile</h1>
-<div class="profile-pic-div">
-  <img src="/static/img/default-prof-pic.jpg" id="photo">
-  <input type="file" id="file">
-  <label for="file" id="uploadBtn">Choose Photo</label>
+<div class="position-absolute top-50 start-50 translate-middle" id="user-profile">
+  <h1>{{ user.name }}'s Profile</h1>
+  <div class="profile-pic-div">
+    <img src="/static/img/default-prof-pic.jpg" id="photo">
+    <input type="file" id="file">
+    <label for="file" id="uploadBtn">Choose Photo</label>
+  </div>
+  <div id="user-info">
+    <p>
+      Name: {{ user.name }}</br>
+      Email: {{ user.email }}</br>
+      Zipcode: {{ user.zipcode }}</br>
+    </p>
+    <a href="/saved">Saved Restaurants</a>.
+  </div>
 </div>
-<div>
-  <p>
-    Name: {{ user.name }}</br>
-    Email: {{ user.email }}</br>
-    Zipcode: {{ user.zipcode }}</br>
-  </p>
-  <p>
-    See your <a href="/saved">saved restaurants</a>.
-  </p>
-</div>
+
+
 <script src="/static/js/profPic.js"></script>
 {% endblock %}

@@ -7,12 +7,16 @@ body {
     background-color: rgba(221,192,180,0.85);
     padding: 50px 100px;
     border-radius: 25%;
-    /* text-shadow: gray; */
+    text-shadow: 1px 2px gray;
+}
+
+.blockquote-footer {
+    color: #FFEEDC;
 }
 
 #loginBtn {
     background-color: #bd8270;
-    border-color: white;
+    border: 1px solid #bd8270;
     border-radius: 30%;
 }
 
@@ -22,5 +26,6 @@ body {
 
 #loginSubmitBtn, #newAccountBtn {
     background-color: #aa6f5d;
+    border: 1px solid #aa6f5d;
     color: white;
 }
