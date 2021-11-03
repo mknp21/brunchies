@@ -1,27 +1,46 @@
-/* body {
-    background: url(/static/img/aboutBrunch1.jpg) no-repeat center center;
-    background-size: cover;
-} */
+.heading {
+    background: url(/static/img/aboutBrunch1.jpg) center;
+    background-position: 25% 74%;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.heading > h1 {
+    margin-top: 20px;
+    text-shadow: 3px 2px gray;
+}
 
 #restaurant-info {
     background-color: rgba(221,192,180,0.90);
     padding: 25px;
-    border: 3px solid white;
-    border-radius: 25%;
+    border: 10px dotted #bd8270;
+    border-radius: 10px;
+}
+
+#restaurant-info > h1 {
+    text-shadow: 2px 2px gray;
+}
+
+.restaurant-details {
+    font-size: 20px;
+    background-color: rgba(189,130,112,0.20);
+    border-radius: 10px;
 }
 
 #save-button {
     background-color: #bd8270;
-    border-color: white;
-    border-radius: 30%;
+    border-color: #bd8270;
     color: white;
 }
 
 .card {
-    background-color: rgba(189,130,112,0.80);
+    background-color: rgba(189,130,112,0.75);
     border: 5px solid #bd8270;
+    border-radius: 10px;
 }
 
-/* img {
-    width: 100%;
-} */
+.card-title {
+    font-family: 'Lobster Two', cursive;
+    text-shadow: 1px 2px gray;
+}

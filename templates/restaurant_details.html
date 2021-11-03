@@ -4,24 +4,29 @@
 <link rel="stylesheet" href="/static/css/restDetails.css"/>
 {% endblock %}
 {% block body %}
+<div class="heading">
+  <h1>Restaurant Details</h1>
+</div>
 <div class="container">
   <div class="row align-items-center">
     <div class="col">
       <form method="POST">
         <div class="text-center" id="restaurant-info">
           <h1>{{ restaurant.rest_name }}</h1>
-          <p>
-              Price: {{ restaurant.price }} |
-              Rating: {{ restaurant.rating }} |
-              Reviews: {{ restaurant.review_count }}
-          </p></br>
-          <p>
-              {{ restaurant.phone }}</br>
-              {{ restaurant.address }}</br>
-              {{ restaurant.city }}, {{ restaurant.state }} {{ restaurant.zipcode }}</br>
-          </p></br>
-          <p><em>This restaurant has been saved {{ count }} time(s)!</em></p>
-          <button type="submit" id="save-button">Save Restaurant</button>
+          <div class="restaurant-details">
+            <p>
+                Price: {{ restaurant.price }} |
+                Rating: {{ restaurant.rating }} |
+                Reviews: {{ restaurant.review_count }}
+            </p></br>
+            <p>
+                {{ restaurant.phone }}</br>
+                {{ restaurant.address }}</br>
+                {{ restaurant.city }}, {{ restaurant.state }} {{ restaurant.zipcode }}</br>
+            </p></br>
+            <p><em>This restaurant has been saved <b>{{ count }}</b> time(s)!</em></p>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" id="save-button">Save</button>
         </div>
       </form>
     </div>
@@ -33,14 +38,14 @@
             <div class="card mb-3 text-center" style="max-width: 800px;">
               <div class="row g-0 align-items-center">
                 <div class="col-md-4">
+                  
                   <img src="{{ review.prof_pic }}" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title">{{ review.creator }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ review.rating }}</h6>
-                    <p class="card-text">{{ review.content }}</p>
-                    <small class="text-muted">Created {{ review.date_created }}</small>
+                    <h4 class="card-title">{{ review.creator }}</h4>
+                    <p class="card-text"><b>{{ review.rating }}</b> | {{ review.content }}</p>
+                    <small class="text">Created {{ review.date_created }}</small>
                   </div>
                 </div>
               </div>
