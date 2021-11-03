@@ -1,0 +1,27 @@
+/* body {
+    background: url(/static/img/aboutBrunch1.jpg) no-repeat center center;
+    background-size: cover;
+} */
+
+#restaurant-info {
+    background-color: rgba(221,192,180,0.90);
+    padding: 25px;
+    border: 3px solid white;
+    border-radius: 25%;
+}
+
+#save-button {
+    background-color: #bd8270;
+    border-color: white;
+    border-radius: 30%;
+    color: white;
+}
+
+.card {
+    background-color: rgba(189,130,112,0.80);
+    border: 5px solid #bd8270;
+}
+
+/* img {
+    width: 100%;
+} */
