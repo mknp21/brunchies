@@ -1,3 +1,6 @@
+// CURRENTLY NOT IN USE
+// post demo night - will work on getting cluster markers to display
+
 // import { MarkerClusterer } from "@googlemaps/markerclusterer";
 
 let map;
