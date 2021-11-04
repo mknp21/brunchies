@@ -5,13 +5,13 @@ let map;
 
 function initMap() {
     const sfCoords = {
-        lat: 37.7749,
-        lng: -122.4194,
+        lat: 37.7609,
+        lng: -122.4409,
     };
     
     map = new google.maps.Map(document.querySelector('#map'), {
         center: sfCoords,
-        zoom: 13,
+        zoom: 12.8,
         styles: [
             {
                 "featureType": "administrative.country",

@@ -5,47 +5,35 @@
 <link rel="stylesheet" href="/static/css/savedPlaces.css"/>
 {% endblock %}
 {% block body %}
-<h1>My Saved Restaurants</h1>
-<!-- <ul id="saved-restaurants">
-  {% for saved_item in all_saved_items %}
-    <li id="saved-item">
-      <form action="/saved" method="POST">
-        <input type="hidden" name="restaurant" value="{{ saved_item.restaurant.rest_id }}"/>
-        <a href="/brunchspots/{{ saved_item.rest_id }}">{{ saved_item.restaurant.rest_name }}</a>
-        <button type="submit" id="delete-btn">Delete</button>
-      </form>
-    </li>
-  {% endfor %}
-    <li><a href="/brunchspots">Save another restaurant >></a></li>
-</ul> -->
+<div class="heading">
+  <h1>Saved Restaurants</h1>
+</div>
+<div id="map"></div>
 <div id="savedCards">
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-3">
       {% for saved_item in all_saved_items %}
       <div class="col">
-        <form action="/saved" method="POST">
-          <input type="hidden" name="restaurant" value="{{ saved_item.restaurant.rest_id }}"/>
-          <div class="card text-center h-100" style="width: 100%;">
-          <div class="card-body">
-            <h5 class="card-title">
-              <a href="/brunchspots/{{ saved_item.rest_id }}" class="card-link">{{ saved_item.restaurant.rest_name }}</a>
-            </h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ saved_item.restaurant.phone }}</h6>
-            <p class="card-text">
-              {{ saved_item.restaurant.address }}</br>
-              {{ saved_item.restaurant.city }},
-              {{ saved_item.restaurant.zipcode }}</br>
-            </p>
-            <button type="submit" id="delete-btn">Delete</button>
-          </div>
-          </div>
-        </form>
+      <form action="/saved" method="POST">
+        <input type="hidden" name="restaurant" value="{{ saved_item.restaurant.rest_id }}"/>
+        <div class="card h-100 text-center" style="width: 100%;">
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="/brunchspots/{{ saved_item.rest_id }}" class="card-link">{{ saved_item.restaurant.rest_name }}</a>
+          </h4>
+          <p class="card-text">
+            <b>{{ saved_item.restaurant.address }}. {{ saved_item.restaurant.city }},
+            {{ saved_item.restaurant.zipcode }}</b></br>
+          </p>
+          <button type="submit" id="delete-btn">Delete</button>
+        </div>
+        </div>
+      </form>
       </div>
       {% endfor %}
     </div>
   </div>
 </div>
-<div id="map"></div>
 <script src="/static/js/savedPlaces.js"></script>
 <script
 async defer
