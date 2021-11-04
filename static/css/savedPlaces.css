@@ -16,9 +16,9 @@
     padding: 5px;
 }
 
-h4 > a {
+h3 > a {
     color: white;
-    text-shadow: 1px 1px gray;  
+    text-shadow: 2px 1px gray;  
 }
 
 .row {
@@ -26,8 +26,8 @@ h4 > a {
 }
 
 .card {
-    background-color: rgba(189,130,112,0.25);
-    border: 5px outset white;
+    background-color: rgba(189,130,112,0.40);
+    border: 3px outset white;
     border-radius: 5px;
 }
 
@@ -36,4 +36,8 @@ h4 > a {
     border-color: #bd8270;
     border-radius: 10px;
     color: white;
+}
+
+#add_rest {
+    font-size: x-large;
 }

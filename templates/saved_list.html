@@ -6,7 +6,7 @@
 {% endblock %}
 {% block body %}
 <div class="heading">
-  <h1>Saved Restaurants</h1>
+  <h1 class="display-5">Saved Restaurants</h1>
 </div>
 <div id="map" class="mx-auto"></div>
 <div id="savedCards">
@@ -18,9 +18,9 @@
         <input type="hidden" name="restaurant" value="{{ saved_item.restaurant.rest_id }}"/>
         <div class="card h-100 text-center" style="width: 100%;">
         <div class="card-body">
-          <h4 class="card-title">
+          <h3 class="card-title">
             <a href="/brunchspots/{{ saved_item.rest_id }}" class="card-link">{{ saved_item.restaurant.rest_name }}</a>
-          </h4>
+          </h3>
           <p class="card-text">
             <b>{{ saved_item.restaurant.address }}. {{ saved_item.restaurant.city }},
             {{ saved_item.restaurant.zipcode }}</b></br>
@@ -34,6 +34,7 @@
     </div>
   </div>
 </div>
+<p class="text-center" id="add_rest"><a href="/brunchspots">Save more restaurants >></a></p>
 <script src="/static/js/savedPlaces.js"></script>
 <script
 async defer
