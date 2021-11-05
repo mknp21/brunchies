@@ -14,10 +14,14 @@ body {
 }
 
 #user-profile {
-    background-color: rgba(221,192,180,0.85);
-    padding: 50px 100px;
+    background-color: rgba(221,192,180,0.90);
+    padding: 50px 150px;
     border-radius: 25%;
     text-align: center;
+}
+
+h1 {
+    padding: 20px;
 }
 
 h1, p {
@@ -29,6 +33,7 @@ h1, p {
     width: 200px;
     position: relative;
     margin: auto;
+    margin-bottom: 30px;
     /* position: absolute;
     top: 50%;
     left: 50%;
@@ -65,6 +70,12 @@ h1, p {
     display: none; 
 }
 
-.offcanvas {
+#savedBtn {
     background-color: #bd8270;
+    border: 1px solid #bd8270;
+    border-radius: 10px;
+}
+
+a {
+    color: white;
 }

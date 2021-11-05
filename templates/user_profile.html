@@ -5,20 +5,22 @@
 {% endblock %}
 {% block body %}
 <div class="position-absolute top-50 start-50 translate-middle" id="user-profile">
-  <h1>{{ user.name }}'s Profile</h1>
+  <h1 class="display-5">{{ user.name }}'s Profile</h1>
   <div class="profile-pic-div">
     <img src="/static/img/default-prof-pic.jpg" id="photo">
     <input type="file" id="file">
     <label for="file" id="uploadBtn">Choose Photo</label>
   </div>
   <div id="user-info">
-    <p>
+    <p class="fs-5">
       Name: {{ user.name }}</br>
       Email: {{ user.email }}</br>
       Zipcode: {{ user.zipcode }}</br>
     </p>
-    <a href="/saved">Saved Restaurants</a>.
   </div>
+  <button type="button" class="btn btn-primary btn-lg" id="savedBtn">
+    <a href="/saved" style="text-decoration: none;">My Saved Restaurants</a>
+  </button>
 </div>
 
 
