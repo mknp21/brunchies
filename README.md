@@ -12,6 +12,7 @@ Learn more about the developer: https://www.linkedin.com/in/mika-patterson/
 
 #### Dynamic Search Bar
 *Javascript and jQuery allowed for creation of a dynamic search bar that filters locations by name, zipcode, rating, or price.*
+
 ![Dynamic search bar](https://github.com/mknp21/brunchies/blob/main/static/img/SearchBar.gif "Search Bar") 
 
 #### Saved Restaurants
