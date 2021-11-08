@@ -13,7 +13,7 @@ Learn more about the developer: https://www.linkedin.com/in/mika-patterson/
 ![Dynamic search bar](https://github.com/mknp21/brunchies/blob/main/static/img/SearchBar.gif "Search Bar")
 
 #### Saved Restaurants
-
+![Dynamic search bar](https://github.com/mknp21/brunchies/blob/main/static/img/SavetoMap.gif "Search Bar")
 
 ### Technology
 * Python
