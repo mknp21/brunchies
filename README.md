@@ -21,6 +21,8 @@ Learn more about the developer: https://www.linkedin.com/in/mika-patterson/
 
 
 ### User Interface
+#### Login/Account Creation Modals
+![login and create account modals](https://github.com/mknp21/brunchies/blob/1658c5ffd98817fb473f0d7827169ba6e86237b4/static/img/ezgif.com-gif-maker.gif "Modals")
 
 
 
