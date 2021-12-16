@@ -37,4 +37,4 @@ Learn more about the developer: https://www.linkedin.com/in/mika-patterson/
 ## Version 2.0
 * Incorporate cluster markers to improve load times for a larger number of pins
 * Utilize Google's Directions API to allow users to get directions to saved restaurants
-* Utilize Twilio's SMS API to allow users to share restaurants with friends
+* Utilize SMS to allow users to share restaurants with friends
